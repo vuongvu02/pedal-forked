@@ -1,5 +1,5 @@
 {
   "extends": "./node_modules/@repo/typescript-config/react-library.json",
-  "include": ["."],
+  "include": ["lib"],
   "exclude": ["dist", "build", "node_modules"]
 }
