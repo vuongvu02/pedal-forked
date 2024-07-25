@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "@bls/core/lib";
 
 const meta: Meta<typeof Button> = {
+  title: "Components/Button",
   component: Button,
 };
 
@@ -14,12 +15,38 @@ type Story = StoryObj<typeof Button>;
  * See https://storybook.js.org/docs/react/api/csf
  * to learn how to use render functions.
  */
-export const Primary: Story = {
-  render: (props) => <Button {...props}>Hello</Button>,
-  name: "Button",
+export const Basic: Story = {
+  render: (args) => <Button {...args} />,
   args: {
     children: "Hello",
-    variant: "primary",
-    size: "md",
   },
+};
+
+export const AllVariants: Story = {
+  render: (args) => (
+    <>
+      <Button {...args} variant="primary">
+        Primary
+      </Button>{" "}
+      <Button {...args} variant="secondary">
+        Secondary
+      </Button>
+    </>
+  ),
+};
+
+export const AllSizes: Story = {
+  render: (args) => (
+    <>
+      <Button {...args} size="sm">
+        Small
+      </Button>{" "}
+      <Button {...args} size="md">
+        Medium
+      </Button>{" "}
+      <Button {...args} size="lg">
+        Large
+      </Button>
+    </>
+  ),
 };

@@ -11,31 +11,30 @@
   user-select: none;
   border: 1px solid transparent;
   border-radius: 0.25rem;
-  background-color: #007bff;
+  background-color: #afd057;
   color: #fff;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #afd057;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &:active {
+    background-color: #6a861e;
     color: #fff;
     text-decoration: none;
   }
 
   &:focus {
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
-  }
-
-  &:disabled {
-    background-color: #6c757d;
-    border-color: #6c757d;
-    color: #fff;
-    cursor: not-allowed;
+    box-shadow: 0 0 0 0.2rem #afd057;
   }
 
   &[data-variant="secondary"] {
-    border-color: #007bff;
+    border-color: #afd057;
     background-color: transparent;
-    color: #007bff;
+    color: #afd057;
   }
 
   &[data-size="sm"] {
@@ -46,5 +45,12 @@
   &[data-size="lg"] {
     padding: 0.5rem 1rem;
     font-size: 1.25rem;
+  }
+
+  &:disabled {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #fff;
+    cursor: not-allowed;
   }
 }
