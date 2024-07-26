@@ -50,3 +50,10 @@ export const AllSizes: Story = {
     </>
   ),
 };
+export const Disabled: Story = {
+  render: (args) => (
+    <Button {...args} disabled>
+      Hello
+    </Button>
+  ),
+};
