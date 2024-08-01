@@ -26,6 +26,11 @@ export interface ButtonProps
 
 /**
  * A customizable button component.
+ *
+ * @example
+ * <Button variant="primary" size="md">
+ *   Click me
+ * </Button>
  */
 export function Button({
   variant = "primary",
