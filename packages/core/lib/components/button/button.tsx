@@ -1,4 +1,5 @@
-import styles from "./button.module.css";
+import classNames from "classnames";
+import "./button.css";
 
 /**
  * Props for the Button component.
@@ -37,11 +38,12 @@ export function Button({
   size = "md",
   disabled = false,
   children,
+  className,
   ...restProps
 }: ButtonProps) {
   return (
     <button
-      className={styles.root}
+      className={classNames("bls-Button", className)}
       data-variant={variant}
       data-size={size}
       disabled={disabled}

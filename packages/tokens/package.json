@@ -1,0 +1,16 @@
+{
+  "name": "@bls/design-tokens",
+  "type": "module",
+  "scripts": {
+    "dev1": "tsc --watch",
+    "build1": "tsc"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@crowdstrike/design-tokens": "^2.0.1",
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "latest"
+  }
+}
