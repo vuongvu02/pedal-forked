@@ -14,11 +14,14 @@
   background-color: #95c11e;
   color: #000;
 
-  &:hover,
-  &:active {
+  &:hover {
     border-color: #a8cb49;
     background-color: #a8cb49;
-    text-decoration: none;
+  }
+
+  &:active {
+    border-color: #7fa11a;
+    background-color: #7fa11a;
   }
 
   &:focus-visible {
