@@ -30,3 +30,5 @@ export function Button({
     </button>
   );
 }
+
+Button.displayName = "Button";
