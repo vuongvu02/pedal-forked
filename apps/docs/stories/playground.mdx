@@ -1,0 +1,35 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+import { Playground } from "storybook-addon-code-editor";
+import * as CoreComponents from "@bls/core/lib";
+
+<Meta title="Playground" />
+
+<Unstyled>
+  <Playground
+    availableImports={{
+      '@bls/core': CoreComponents,
+    }}
+    height="80vh"
+    id="bls-play"
+    code={`
+    import { useState } from 'react';
+    import { Button } from '@bls/core';
+
+    export default function Counter() {
+      const [count, setCount] = useState(0);
+
+      return (
+        <div>
+          <p>Count: {count}</p>
+          <Button onClick={() => setCount(count + 1)}>Increment</Button>
+        </div>
+      );
+    };
+    `
+    .trim()
+    .replace(/^ {4}/gm, "")
+
+}
+/>
+
+</Unstyled>

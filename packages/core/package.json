@@ -23,8 +23,8 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@bls/eslint-config": "workspace:*",
+    "@bls/typescript-config": "workspace:*",
     "@types/node": "^20.14.11",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",

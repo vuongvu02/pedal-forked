@@ -10,7 +10,7 @@
   ],
   "devDependencies": {
     "@crowdstrike/design-tokens": "^2.0.1",
-    "@repo/typescript-config": "workspace:*",
+    "@bls/typescript-config": "workspace:*",
     "typescript": "latest"
   }
 }

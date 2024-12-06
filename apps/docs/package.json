@@ -11,14 +11,13 @@
     "lint": "eslint ./stories/*.stories.tsx --max-warnings 0"
   },
   "dependencies": {
-    "@acme/ui": "workspace:*",
     "@bls/core": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@bls/eslint-config": "workspace:*",
+    "@bls/typescript-config": "workspace:*",
     "@storybook/addon-actions": "^8.4.6",
     "@storybook/addon-essentials": "^8.4.6",
     "@storybook/addon-links": "^8.4.6",
@@ -28,6 +27,7 @@
     "eslint": "^8.57.0",
     "serve": "^14.2.1",
     "storybook": "^8.4.6",
+    "storybook-addon-code-editor": "^3.1.0",
     "typescript": "^5.3.3",
     "vite": "^5.1.4"
   }
