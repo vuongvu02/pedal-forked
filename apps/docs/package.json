@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "@bls/core": "workspace:*",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@bls/eslint-config": "workspace:*",
@@ -23,6 +23,8 @@
     "@storybook/addon-links": "^8.4.6",
     "@storybook/react": "^8.4.6",
     "@storybook/react-vite": "^8.4.6",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.57.0",
     "serve": "^14.2.1",
