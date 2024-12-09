@@ -1,0 +1,44 @@
+.bls-SwitchRoot {
+  all: unset;
+  --switch-width: 42px;
+  --switch-height: 25px;
+  --thumb-size: 21px;
+  --thumb-translate-checked: 20px;
+  --thumb-translate-unchecked: 2px;
+  --transition-duration: 100ms;
+  --switch-background-color: #6c757d;
+  --switch-active-background-color: #95c11e;
+  --switch-thumb-color: #e4e3e3;
+  --switch-disabled-background-color: #b4babf;
+
+  cursor: pointer;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  background-color: var(--switch-background-color);
+  border-radius: 9999px;
+  position: relative;
+}
+
+.bls-SwitchRoot[data-state="checked"] {
+  background-color: var(--switch-active-background-color);
+}
+
+.bls-SwitchThumb {
+  display: block;
+  width: var(--thumb-size);
+  height: var(--thumb-size);
+  background-color: var(--switch-thumb-color);
+  border-radius: 9999px;
+  transition: transform var(--transition-duration);
+  transform: translateX(var(--thumb-translate-unchecked));
+  will-change: transform;
+}
+
+.bls-SwitchThumb[data-state="checked"] {
+  transform: translateX(var(--thumb-translate-checked));
+}
+
+.bls-SwitchRoot:disabled {
+  background-color: var(--switch-disabled-background-color);
+  cursor: not-allowed;
+}
