@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Switch } from "@bls/core/lib";
+import { useState } from "react";
 
 const meta: Meta<typeof Switch> = {
   title: "Components/Switch",
@@ -18,6 +19,13 @@ type Story = StoryObj<typeof Switch>;
 export const Basic: Story = {
   render: (args) => <Switch {...args} />,
   args: {},
+};
+
+export const Controlled: Story = {
+  render: (args) => {
+    const [checked, setChecked] = useState(false);
+    return <Switch {...args} checked={checked} onCheckedChange={setChecked} />;
+  },
 };
 
 export const Disabled: Story = {
