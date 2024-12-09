@@ -1,5 +1,21 @@
 .bls-Button {
-  font-family: "Titillium Web", sans-serif;
+  --button-font-family: "Titillium Web", sans-serif;
+  --button-border-color: #95c11e;
+  --button-background-color: #95c11e;
+  --button-color: #000;
+  --button-hover-border-color: #a8cb49;
+  --button-hover-background-color: #a8cb49;
+  --button-active-border-color: #7fa11a;
+  --button-active-background-color: #7fa11a;
+  --button-focus-outline-color: black;
+  --button-focus-outline-offset: 2px;
+  --button-secondary-background-color: transparent;
+  --button-disabled-background-color: #6c757d;
+  --button-disabled-border-color: #6c757d;
+  --button-disabled-color: #fff;
+  --button-border-radius: 8px;
+
+  font-family: var(--button-font-family);
   display: inline-block;
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -9,29 +25,29 @@
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
-  border: 2px solid #95c11e;
-  border-radius: 8px;
-  background-color: #95c11e;
-  color: #000;
+  border: 2px solid var(--button-border-color);
+  border-radius: var(--button-border-radius);
+  background-color: var(--button-background-color);
+  color: var(--button-color);
 
   &:hover {
-    border-color: #a8cb49;
-    background-color: #a8cb49;
+    border-color: var(--button-hover-border-color);
+    background-color: var(--button-hover-background-color);
   }
 
   &:active {
-    border-color: #7fa11a;
-    background-color: #7fa11a;
+    border-color: var(--button-active-border-color);
+    background-color: var(--button-active-background-color);
   }
 
   &:focus-visible {
-    outline: 2px solid black;
-    outline-offset: 2px;
+    outline: 2px solid var(--button-focus-outline-color);
+    outline-offset: var(--button-focus-outline-offset);
   }
 
   &[data-variant="secondary"] {
-    border-color: #95c11e;
-    background-color: transparent;
+    border-color: var(--button-border-color);
+    background-color: var(--button-secondary-background-color);
   }
 
   &[data-size="sm"] {
@@ -45,9 +61,9 @@
   }
 
   &:disabled {
-    background-color: #6c757d;
-    border-color: #6c757d;
-    color: #fff;
+    background-color: var(--button-disabled-background-color);
+    border-color: var(--button-disabled-border-color);
+    color: var(--button-disabled-color);
     cursor: not-allowed;
   }
 }
