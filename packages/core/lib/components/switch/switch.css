@@ -1,5 +1,4 @@
 .bls-SwitchRoot {
-  all: unset;
   --switch-width: 42px;
   --switch-height: 25px;
   --thumb-size: 21px;
@@ -11,6 +10,7 @@
   --switch-thumb-color: #e4e3e3;
   --switch-disabled-background-color: #b4babf;
 
+  all: unset;
   cursor: pointer;
   width: var(--switch-width);
   height: var(--switch-height);
