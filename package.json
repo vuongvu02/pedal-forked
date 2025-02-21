@@ -16,5 +16,10 @@
     "turbo": "^2.4.0"
   },
   "packageManager": "pnpm@10.4.1",
-  "name": "design-system"
+  "name": "design-system",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
 }
