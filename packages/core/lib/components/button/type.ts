@@ -17,4 +17,9 @@ export interface ButtonProps
    * @default "md"
    */
   size?: "sm" | "md" | "lg";
+
+  /**
+   * The content of the button.
+   */
+  children: React.ReactNode;
 }

@@ -17,6 +17,7 @@ const config: StorybookConfig = {
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("storybook-addon-code-editor"),
+    getAbsolutePath("@storybook/addon-mdx-gfm"),
   ],
 
   framework: {
@@ -42,15 +43,15 @@ const config: StorybookConfig = {
     };
   },
 
-  docs: {
-    autodocs: true,
-  },
-
   typescript: {
     reactDocgen: "react-docgen-typescript",
   },
 
   staticDirs: [...getCodeEditorStaticDirs(__filename)],
+
+  docs: {
+    autodocs: true,
+  },
 };
 
 export default config;
