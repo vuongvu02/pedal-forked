@@ -1,4 +1,4 @@
-import { SwitchProps as BaseProps } from "@radix-ui/react-switch";
+import type { SwitchProps as BaseProps } from "@radix-ui/react-switch";
 
 export interface SwitchProps extends BaseProps {
   /**

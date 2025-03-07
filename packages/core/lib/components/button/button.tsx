@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ButtonProps } from "./type";
+import type { ButtonProps } from "./type";
 import "./button.css";
 
 /**
@@ -21,8 +21,8 @@ export function Button({
   return (
     <button
       className={classNames("bls-Button", className)}
-      data-variant={variant}
       data-size={size}
+      data-variant={variant}
       disabled={disabled}
       {...restProps}
     >

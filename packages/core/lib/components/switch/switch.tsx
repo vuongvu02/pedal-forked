@@ -1,6 +1,6 @@
 import * as BaseSwitch from "@radix-ui/react-switch";
 import classNames from "classnames";
-import { SwitchProps } from "./type";
+import type { SwitchProps } from "./type";
 import "./switch.css";
 
 /**
