@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "@bikeleasing-service/pedal-docs",
   "version": "0.0.0",
   "type": "module",
   "private": true,
