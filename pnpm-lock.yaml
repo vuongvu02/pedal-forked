@@ -117,9 +117,6 @@ importers:
       axios:
         specifier: ^1.8.4
         version: 1.8.4
-      change-case:
-        specifier: ^5.4.4
-        version: 5.4.4
       dotenv:
         specifier: ^16.5.0
         version: 16.5.0
