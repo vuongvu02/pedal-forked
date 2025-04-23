@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Switch } from "@bls/core/lib";
+import { Switch } from "@pedal-ui/core/lib";
 import { useState } from "react";
 
 const meta: Meta<typeof Switch> = {

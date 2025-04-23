@@ -12,10 +12,10 @@ import "./switch.css";
 export function Switch({ className, ...restProps }: SwitchProps) {
   return (
     <BaseSwitch.Root
-      className={classNames("bls-SwitchRoot", className)}
+      className={classNames("pedal-SwitchRoot", className)}
       {...restProps}
     >
-      <BaseSwitch.Thumb className="bls-SwitchThumb" />
+      <BaseSwitch.Thumb className="pedal-SwitchThumb" />
     </BaseSwitch.Root>
   );
 }

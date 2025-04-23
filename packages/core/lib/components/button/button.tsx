@@ -20,7 +20,7 @@ export function Button({
 }: ButtonProps) {
   return (
     <button
-      className={classNames("bls-Button", className)}
+      className={classNames("pedal-Button", className)}
       data-size={size}
       data-variant={variant}
       disabled={disabled}

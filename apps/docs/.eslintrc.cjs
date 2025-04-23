@@ -1,4 +1,4 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ["@bls/eslint-config/storybook.js"],
+  extends: ["@pedal-ui/eslint-config/storybook.js"],
 };

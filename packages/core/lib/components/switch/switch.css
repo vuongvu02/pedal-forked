@@ -1,4 +1,4 @@
-.bls-SwitchRoot {
+.pedal-SwitchRoot {
   --switch-width: 42px;
   --switch-height: 25px;
   --thumb-size: 21px;
@@ -19,11 +19,11 @@
   position: relative;
 }
 
-.bls-SwitchRoot[data-state="checked"] {
+.pedal-SwitchRoot[data-state="checked"] {
   background-color: var(--switch-active-background-color);
 }
 
-.bls-SwitchThumb {
+.pedal-SwitchThumb {
   display: block;
   width: var(--thumb-size);
   height: var(--thumb-size);
@@ -34,11 +34,11 @@
   will-change: transform;
 }
 
-.bls-SwitchThumb[data-state="checked"] {
+.pedal-SwitchThumb[data-state="checked"] {
   transform: translateX(var(--thumb-translate-checked));
 }
 
-.bls-SwitchRoot:disabled {
+.pedal-SwitchRoot:disabled {
   background-color: var(--switch-disabled-background-color);
   cursor: not-allowed;
 }

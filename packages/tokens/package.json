@@ -1,5 +1,5 @@
 {
-  "name": "@bls/tokens",
+  "name": "@pedal-ui/tokens",
   "type": "module",
   "scripts": {
     "dev1": "tsc --watch",
@@ -9,7 +9,7 @@
     "dist"
   ],
   "devDependencies": {
-    "@bls/typescript-config": "workspace:*",
+    "@pedal-ui/typescript-config": "workspace:*",
     "@crowdstrike/design-tokens": "^2.1.0",
     "typescript": "^5.8.3"
   }

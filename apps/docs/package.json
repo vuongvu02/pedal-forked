@@ -11,13 +11,13 @@
     "lint": "eslint ./stories/*.stories.tsx --max-warnings 0"
   },
   "dependencies": {
-    "@bls/core": "workspace:*",
+    "@pedal-ui/core": "workspace:*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@bls/eslint-config": "workspace:*",
-    "@bls/typescript-config": "workspace:*",
+    "@pedal-ui/eslint-config": "workspace:*",
+    "@pedal-ui/typescript-config": "workspace:*",
     "@storybook/addon-actions": "^8.6.12",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-links": "^8.6.12",
