@@ -1,18 +1,18 @@
 import { Meta, Unstyled } from "@storybook/blocks";
 import { Playground } from "storybook-addon-code-editor";
-import * as CoreComponents from "@pedal-ui/ui/lib";
+import * as UIComponents from "@bikeleasing-service/pedal-ui/lib";
 
 <Meta title="Playground" />
 
   <Playground
     availableImports={{
-      '@pedal-ui/ui': CoreComponents,
+      '@bikeleasing-service/pedal-ui': UIComponents,
     }}
     height="60vh"
     id="pedal-play"
     code={`
     import { useState } from 'react';
-    import { Button } from '@pedal-ui/ui';
+    import { Button } from '@bikeleasing-service/pedal-ui';
 
     export default function Counter() {
       const [count, setCount] = useState(0);

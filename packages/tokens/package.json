@@ -1,6 +1,5 @@
 {
-  "$schema": "https://json.schemastore.org/package.json",
-  "name": "@pedal-ui/tokens",
+  "name": "@bikeleasing-service/pedal-tokens",
   "version": "0.0.0",
   "description": "Pedal UI design tokens",
   "license": "MIT",
@@ -15,7 +14,7 @@
   },
   "devDependencies": {
     "@figma/rest-api-spec": "^0.10.0",
-    "@pedal-ui/typescript-config": "workspace:*",
+    "@bikeleasing-service/typescript-config": "workspace:*",
     "@types/jest": "^29.5.3",
     "@types/node": "^20.4.5",
     "axios": "^1.6.0",
