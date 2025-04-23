@@ -65,9 +65,11 @@ pnpm sync-tokens
 
 ### Figma Integration
 
-This package supports syncing with Figma: **Sync from Figma to Tokens**: Pull the latest design tokens from Figma variables
+### Figma Integration
 
-For Figma integration, you'll need to create a `.env` file with:
+This package supports syncing with Figma variables, allowing you to pull the latest design tokens directly from your design source.
+
+For Figma integration, you'll need to create a `.env` file with the following variables:
 
 ```
 FILE_KEY="your_figma_file_key"
