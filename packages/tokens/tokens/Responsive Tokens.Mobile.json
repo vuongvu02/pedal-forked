@@ -1,0 +1,32 @@
+{
+  "Icon Size": {
+    "$type": "dimension",
+    "$value": "{Size.32}",
+    "$description": "",
+    "$extensions": {
+      "com.figma": {
+        "hiddenFromPublishing": false,
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "codeSyntax": {},
+        "mode": "Mobile"
+      }
+    }
+  },
+  "Text Input Vertical Padding": {
+    "$type": "dimension",
+    "$value": "{Size.8}",
+    "$description": "",
+    "$extensions": {
+      "com.figma": {
+        "hiddenFromPublishing": false,
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "codeSyntax": {},
+        "mode": "Mobile"
+      }
+    }
+  }
+}
