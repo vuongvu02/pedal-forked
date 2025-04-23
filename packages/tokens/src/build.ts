@@ -1,11 +1,10 @@
 import * as glob from 'glob';
 import * as fs from 'fs';
+import 'dotenv/config';
 import { Config } from 'style-dictionary';
 import { StyleDictionary } from 'style-dictionary-utils';
 import { TokenSourceWithMode } from './types.js';
-import * as dotenv from 'dotenv';
-
-dotenv.config();
+import { logSuccess } from './utils.js';
 
 const THEME_MODES = process.env.THEME_MODES?.split(',') || ['light', 'dark'];
 const RESPONSIVE_MODES = process.env.RESPONSIVE_MODES?.split(',') || ['mobile', 'desktop'];
@@ -124,14 +123,7 @@ const getConfigs = (): Config[] => {
 };
 
 const generateCSSImportFile = (outputCSSRefs: string[]) => {
-  const buildCssPath = 'build/css';
-  const cssFilePath = `${buildCssPath}/variables.css`;
-
-  if (!fs.existsSync(buildCssPath)) {
-    fs.mkdirSync(buildCssPath, { recursive: true });
-  } else if (fs.existsSync(cssFilePath) && fs.statSync(cssFilePath).isDirectory()) {
-    fs.rmSync(cssFilePath, { recursive: true });
-  }
+  const cssFilePath = 'build/css/variables.css';
 
   const cssImports = outputCSSRefs
     .filter(Boolean)
@@ -143,23 +135,21 @@ const generateCSSImportFile = (outputCSSRefs: string[]) => {
     `/**\n* Do not edit directly, this file was auto-generated.\n*/\n\n${cssImports}\n`,
   );
 
-  console.info('Generated CSS import file:', cssFilePath);
+  logSuccess(`Generated CSS import file: ${cssFilePath}`);
 };
 
 async function run() {
   const configs = getConfigs();
   const outputCSSRefs: string[] = [];
 
-  configs.forEach(async (config, index) => {
+  const buildPromises = configs.map(async (config) => {
     const sd = new StyleDictionary(config);
     outputCSSRefs.push(config.platforms?.css.files?.[0].destination || '');
 
-    // only clean the build directory on the first run
-    if (index === 0) {
-      await sd.cleanAllPlatforms();
-    }
     await sd.buildAllPlatforms();
   });
+
+  await Promise.all(buildPromises);
 
   generateCSSImportFile(outputCSSRefs);
 }

@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import { GetLocalVariablesResponse } from '@figma/rest-api-spec';
 import FigmaApi from './figma-api.js';
 import { Token, TokensFile } from './types.js';
-import { tokenTypeFromVariable, tokenValueFromVariable } from './utils.js';
+import { tokenTypeFromVariable, tokenValueFromVariable, logSuccess } from './utils.js';
 
 const OUTPUT_DIR = 'tokens';
 
@@ -71,10 +71,10 @@ async function main() {
 
   Object.entries(tokensFiles).forEach(([fileName, fileContent]) => {
     fs.writeFileSync(`${OUTPUT_DIR}/${fileName}`, JSON.stringify(fileContent, null, 2));
-    console.info(`Wrote ${fileName}`);
+    console.info(`✔︎ Wrote "${fileName}"`);
   });
 
-  console.info(`\n\x1b[32m✅ Tokens files have been written to the ${OUTPUT_DIR} directory\x1b[0m`);
+  logSuccess(`Tokens files have been written to the ${OUTPUT_DIR} directory`);
 }
 
 main();
