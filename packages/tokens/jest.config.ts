@@ -1,4 +1,4 @@
-import type { Config } from 'jest'
+import type { Config } from 'jest';
 
 const config: Config = {
   verbose: true,
@@ -8,6 +8,6 @@ const config: Config = {
   moduleNameMapper: {
     '^(\\.{1,2}/.*)\\.js$': '$1',
   },
-}
+};
 
-export default config
+export default config;
