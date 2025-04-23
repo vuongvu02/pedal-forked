@@ -1,13 +1,17 @@
 import { defineConfig } from "vite";
+import type { PluginOption } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
 import { extname, relative, resolve } from "path";
 import { fileURLToPath } from "node:url";
 import { glob } from "glob";
-
 export default defineConfig({
-  plugins: [react(), libInjectCss(), dts({ include: ["lib"] })],
+  plugins: [
+    react(),
+    libInjectCss(),
+    dts({ include: ["lib"] }),
+  ] as PluginOption[],
   build: {
     lib: {
       entry: resolve(__dirname, "lib/main.ts"),
@@ -28,7 +32,7 @@ export default defineConfig({
             // The absolute path to the entry file
             // lib/nested/foo.ts becomes /project/lib/nested/foo.ts
             fileURLToPath(new URL(file, import.meta.url)),
-          ]),
+          ])
       ),
       output: {
         assetFileNames: "styles/[name][extname]",
