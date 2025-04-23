@@ -1,9 +1,18 @@
 {
   "name": "@bikeleasing-service/pedal-tokens",
   "version": "0.0.0",
-  "description": "Pedal UI design tokens",
+  "description": "Pedal Design Tokens",
   "license": "MIT",
   "type": "module",
+  "main": "./build/ts/base.js",
+  "module": "./build/ts/base.js",
+  "types": "./build/ts/base.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/bikeleasing-service"
+  },
+  "files": [
+    "build/**/*"
+  ],
   "scripts": {
     "build": "pnpm clean && pnpm sync-tokens && tsx src/build.ts",
     "clean": "rm -rf tokens/*.json build/",
