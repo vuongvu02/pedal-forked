@@ -9,8 +9,8 @@
     "dist"
   ],
   "devDependencies": {
-    "@crowdstrike/design-tokens": "^2.0.1",
     "@bls/typescript-config": "workspace:*",
-    "typescript": "latest"
+    "@crowdstrike/design-tokens": "^2.1.0",
+    "typescript": "^5.8.3"
   }
 }

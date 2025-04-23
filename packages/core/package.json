@@ -25,19 +25,19 @@
   "devDependencies": {
     "@bls/eslint-config": "workspace:*",
     "@bls/typescript-config": "workspace:*",
-    "@types/node": "^20.14.11",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "eslint": "^8.57.0",
-    "glob": "^11.0.0",
-    "typescript": "^5.2.2",
-    "vite": "^5.3.4",
-    "vite-plugin-dts": "4.0.0-beta.1",
-    "vite-plugin-lib-inject-css": "^2.2.1"
+    "@types/node": "^22.14.1",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "eslint": "^9.25.1",
+    "glob": "^11.0.1",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.2",
+    "vite-plugin-dts": "4.5.3",
+    "vite-plugin-lib-inject-css": "^2.2.2"
   },
   "dependencies": {
-    "@radix-ui/react-switch": "^1.1.1",
+    "@radix-ui/react-switch": "^1.2.2",
     "classnames": "^2.5.1"
   }
 }

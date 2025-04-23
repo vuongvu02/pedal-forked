@@ -12,9 +12,9 @@
     "release": "turbo run build --filter=docs^... && changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.12",
-    "prettier": "^3.4.2",
-    "turbo": "^2.4.4"
+    "@changesets/cli": "^2.29.2",
+    "prettier": "^3.5.3",
+    "turbo": "^2.5.0"
   },
   "packageManager": "pnpm@10.4.1",
   "name": "design-system",
