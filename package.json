@@ -20,7 +20,9 @@
   "name": "pedal-ui",
   "pnpm": {
     "onlyBuiltDependencies": [
+      "@bundled-es-modules/glob",
       "esbuild",
+      "style-dictionary",
       "unrs-resolver"
     ]
   }
