@@ -3,15 +3,15 @@
 This project is powered by:
 
 - 🏎 [Turborepo](https://turbo.build/repo) — High-performance build system for Monorepos
-- 🚀 [React](https://reactjs.org/) — JavaScript library for user interfaces
+- 🚀 (WIP) [React](https://reactjs.org/) — JavaScript library for user interfaces
 - 🎨 [Design Tokens](https://css-tricks.com/what-are-design-tokens/) — Single source of truth for design values
 - 📖 [Storybook](https://storybook.js.org/) — UI component environment powered by Vite
 
 As well as a few others tools preconfigured:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- (WIP) [ESLint](https://eslint.org/) for code linting
+- (WIP) [Prettier](https://prettier.io) for code formatting
 - [PNPM](https://pnpm.io/) for fast, disk space efficient package management
 - [GitHub Packages](https://github.com/features/packages) for private package distribution
 
