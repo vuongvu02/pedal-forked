@@ -110,11 +110,11 @@ const getConfigs = (): Config[] => {
         files: [
           {
             destination: `${mode}.js`,
-            format: 'javascript/es6',
+            format: 'javascript/esm',
           },
           {
             destination: `${mode}.d.ts`,
-            format: 'typescript/es6-declarations',
+            format: 'typescript/esm-declarations',
           },
         ],
       },

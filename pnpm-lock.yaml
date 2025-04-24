@@ -20,6 +20,9 @@ importers:
 
   apps/docs:
     dependencies:
+      '@bikeleasing-service/pedal-tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
       '@bikeleasing-service/pedal-ui':
         specifier: workspace:*
         version: link:../../packages/ui

@@ -3,7 +3,7 @@ import { Switch } from "@bikeleasing-service/pedal-ui/lib";
 import { useState } from "react";
 
 const meta: Meta<typeof Switch> = {
-  title: "Components/Switch",
+  title: "Components/Switch (Test)",
   component: Switch,
 };
 

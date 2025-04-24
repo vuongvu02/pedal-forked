@@ -22,6 +22,49 @@ Our design tokens are organized into the following categories:
 - **Components**: Component-specific design values
 - **Responsive Tokens**: Platform-specific values for desktop and mobile
 
+For a detailed explanation of our token architecture and usage guidelines, please refer to our [Design Tokens Concept documentation](https://www.notion.so/bikeleasing/Design-Tokens-Concept-b5caf3730f9d4cf6a1da3a3157852918).
+
+## Token Structure
+
+Our token system is organized hierarchically and transformed for different platforms and themes:
+
+### Base
+
+The complete collection with default settings:
+
+- Component tokens
+- Theme tokens (light)
+- Responsive tokens (mobile)
+- Dimension tokens
+- Typography tokens (mobile)
+- Primitives tokens
+
+### Theme Variants
+
+**Light Theme**
+
+- Theme tokens (light)
+- Primitives tokens
+
+**Dark Theme**
+
+- Theme tokens (dark)
+- Primitives tokens
+
+### Responsive Variants
+
+**Mobile**
+
+- Responsive tokens (mobile)
+- Typography tokens (mobile)
+- Primitives tokens
+
+**Desktop**
+
+- Responsive tokens (desktop)
+- Typography tokens (desktop)
+- Primitives tokens
+
 ## Usage
 
 ### Installation
