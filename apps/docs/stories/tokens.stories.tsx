@@ -116,7 +116,15 @@ const TokensDisplay: React.FC<TokensDisplayProps> = ({ tokens, groupName }) => {
   };
 
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", padding: "1rem" }}>
+    <div
+      style={{
+        fontFamily: "system-ui, sans-serif",
+        padding: "50px 100px",
+        maxWidth: "1000px",
+        margin: "100px auto",
+        border: "1px solid #eee",
+      }}
+    >
       <h1 style={{ marginBottom: "2rem" }}>{groupName}</h1>
 
       {renderTokens(tokens)}
@@ -137,21 +145,29 @@ export default meta;
 type Story = StoryObj<typeof TokensDisplay>;
 
 export const BaseTokens: Story = {
-  render: () => <TokensDisplay tokens={baseTokens} groupName="Base" />,
+  render: () => <TokensDisplay tokens={baseTokens} groupName="Base Tokens" />,
 };
 
 export const LightTokens: Story = {
-  render: () => <TokensDisplay tokens={lightTokens} groupName="Light Mode" />,
+  render: () => (
+    <TokensDisplay tokens={lightTokens} groupName="Light Mode Tokens" />
+  ),
 };
 
 export const DarkTokens: Story = {
-  render: () => <TokensDisplay tokens={darkTokens} groupName="Dark Mode" />,
+  render: () => (
+    <TokensDisplay tokens={darkTokens} groupName="Dark Mode Tokens" />
+  ),
 };
 
 export const MobileTokens: Story = {
-  render: () => <TokensDisplay tokens={mobileTokens} groupName="Mobile" />,
+  render: () => (
+    <TokensDisplay tokens={mobileTokens} groupName="Mobile Tokens" />
+  ),
 };
 
 export const DesktopTokens: Story = {
-  render: () => <TokensDisplay tokens={desktopTokens} groupName="Desktop" />,
+  render: () => (
+    <TokensDisplay tokens={desktopTokens} groupName="Desktop Tokens" />
+  ),
 };

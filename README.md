@@ -15,6 +15,11 @@ As well as a few others tools preconfigured:
 - [PNPM](https://pnpm.io/) for fast, disk space efficient package management
 - [GitHub Packages](https://github.com/features/packages) for private package distribution
 
+## Live Documentation
+
+View our live Storybook documentation at:
+[https://github.com/Bikeleasing-Service/pedal-ui/deployments/github-pages](https://github.com/Bikeleasing-Service/pedal-ui/deployments/github-pages)
+
 ## Setup
 
 To set up the project:
