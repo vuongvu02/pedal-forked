@@ -97,14 +97,23 @@ pnpm add @bikeleasing-service/pedal-tokens
 
 ### Importing Tokens
 
-```typescript
-// Import CSS variables
-import '@bikeleasing-service/pedal-tokens/build/css/variables.css';
+#### CSS Usage
 
-// Import specific token values in TypeScript
+```css
+@import '@bikeleasing-service/pedal-tokens/build/css/variables.css';
+
+.my-element {
+  color: var(--color-brand);
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-m);
+}
+```
+
+#### JavaScript / TypeScript Usage
+
+```typescript
 import tokens from '@bikeleasing-service/pedal-tokens';
 
-// Access token values
 const brandColor = tokens.Color.Brand; // "#95c11e"
 const primaryFont = tokens.Font.Family.Primary; // "Titillium Web"
 const fontSize = tokens.Font.Size.m; // "1rem"

@@ -19,7 +19,7 @@ const getModeFromFilePath = (path: string): string => {
   return modeMatch[1].toLowerCase();
 };
 
-const getDefaultTokenSet = (): TokenSourceWithMode => {
+const getBaseTokenSet = (): TokenSourceWithMode => {
   const tokenSource = inputTokenSets.filter((tokenPath) => {
     const fileMode = getModeFromFilePath(tokenPath);
     const allModes = [...THEME_MODES, ...RESPONSIVE_MODES];
@@ -64,62 +64,60 @@ const getCSSRules = (mode: string) => {
 };
 
 const getConfigs = (): Config[] => {
-  return [
-    getDefaultTokenSet(),
-    ...getTokenSets(THEME_MODES),
-    ...getTokenSets(RESPONSIVE_MODES),
-  ].map(({ mode = 'base', tokenSource }) => ({
-    source: tokenSource,
-    platforms: {
-      css: {
-        transformGroup: 'css',
-        transforms: ['size/pxToRem'],
-        buildPath: 'build/css/',
-        files: [
-          {
-            destination: `${mode}.css`,
-            format: 'css/advanced',
-            options: {
-              outputReferences: true,
-              selector: getCSSThemeSelector(mode),
-              rules: getCSSRules(mode),
+  return [getBaseTokenSet(), ...getTokenSets(THEME_MODES), ...getTokenSets(RESPONSIVE_MODES)].map(
+    ({ mode = 'base', tokenSource }) => ({
+      source: tokenSource,
+      platforms: {
+        css: {
+          transformGroup: 'css',
+          transforms: ['size/pxToRem'],
+          buildPath: 'build/css/',
+          files: [
+            {
+              destination: `${mode}.css`,
+              format: 'css/advanced',
+              options: {
+                outputReferences: true,
+                selector: getCSSThemeSelector(mode),
+                rules: getCSSRules(mode),
+              },
             },
-          },
-        ],
-      },
-      scss: {
-        transformGroup: 'scss',
-        transforms: ['size/pxToRem'],
-        basePxFontSize: 16,
-        buildPath: 'build/scss/',
-        files: [
-          {
-            destination: `${mode}.scss`,
-            format: 'scss/variables',
-            options: {
-              outputReferences: true,
+          ],
+        },
+        scss: {
+          transformGroup: 'scss',
+          transforms: ['size/pxToRem'],
+          basePxFontSize: 16,
+          buildPath: 'build/scss/',
+          files: [
+            {
+              destination: `${mode}.scss`,
+              format: 'scss/variables',
+              options: {
+                outputReferences: true,
+              },
             },
-          },
-        ],
+          ],
+        },
+        ts: {
+          transformGroup: 'js',
+          transforms: ['name/camel', 'size/pxToRem'],
+          basePxFontSize: 16,
+          buildPath: 'build/ts/',
+          files: [
+            {
+              destination: `${mode}.js`,
+              format: 'javascript/esm',
+            },
+            {
+              destination: `${mode}.d.ts`,
+              format: 'typescript/esm-declarations',
+            },
+          ],
+        },
       },
-      ts: {
-        transformGroup: 'js',
-        transforms: ['name/camel', 'size/pxToRem'],
-        basePxFontSize: 16,
-        buildPath: 'build/ts/',
-        files: [
-          {
-            destination: `${mode}.js`,
-            format: 'javascript/esm',
-          },
-          {
-            destination: `${mode}.d.ts`,
-            format: 'typescript/esm-declarations',
-          },
-        ],
-      },
-    },
-  }));
+    }),
+  );
 };
 
 const generateCSSImportFile = (outputCSSRefs: string[]) => {
