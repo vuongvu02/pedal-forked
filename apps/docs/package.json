@@ -8,11 +8,12 @@
     "build": "storybook build --docs",
     "preview-storybook": "serve storybook-static",
     "clean": "rm -rf .turbo && rm -rf node_modules",
-    "lint": "eslint ./stories/*.stories.tsx --max-warnings 0"
+    "lint": "eslint ./stories/*.stories.tsx --max-warnings 0",
+    "deploy-storybook": "storybook build --docs && gh-pages -d storybook-static"
   },
   "dependencies": {
-    "@bikeleasing-service/pedal-ui": "workspace:*",
     "@bikeleasing-service/pedal-tokens": "workspace:*",
+    "@bikeleasing-service/pedal-ui": "workspace:*",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
@@ -29,6 +30,7 @@
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
     "eslint": "^9.25.1",
+    "gh-pages": "^6.3.0",
     "serve": "^14.2.4",
     "storybook": "^8.6.12",
     "storybook-addon-code-editor": "^4.1.1",
