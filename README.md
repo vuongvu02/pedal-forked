@@ -1,5 +1,7 @@
 # Pedal UI
 
+Pedal UI is Bikeleasing-Service's design system and component library, providing consistent, reusable interface elements across our digital products.
+
 This project is powered by:
 
 - 🏎 [Turborepo](https://turbo.build/repo) — High-performance build system for Monorepos
@@ -17,8 +19,8 @@ As well as a few others tools preconfigured:
 
 ## Live Documentation
 
-View our live Storybook documentation at:
-[https://github.com/Bikeleasing-Service/pedal-ui/deployments/github-pages](https://github.com/Bikeleasing-Service/pedal-ui/deployments/github-pages)
+View our live documentation with
+[Storybook](https://github.com/Bikeleasing-Service/pedal-ui/deployments/github-pages).
 
 ## Setup
 
