@@ -15,6 +15,26 @@ As well as a few others tools preconfigured:
 - [PNPM](https://pnpm.io/) for fast, disk space efficient package management
 - [GitHub Packages](https://github.com/features/packages) for private package distribution
 
+## Setup
+
+To set up the project:
+
+1. Make sure you're using the correct Node.js version:
+
+```bash
+# Install the specified Node.js version in .nvmrc
+nvm install
+
+# Use the specified Node.js version
+nvm use
+```
+
+2. Install dependencies:
+
+```bash
+pnpm install
+```
+
 ## Useful Commands
 
 - `pnpm build` - Build all packages, including the Storybook site

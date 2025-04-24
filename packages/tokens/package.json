@@ -1,7 +1,6 @@
 {
   "name": "@bikeleasing-service/pedal-tokens",
-  "private": true,
-  "version": "0.1.0-beta.0",
+  "version": "0.1.0",
   "description": "Pedal Design Tokens",
   "license": "MIT",
   "type": "module",
@@ -9,7 +8,7 @@
   "module": "./build/ts/base.js",
   "types": "./build/ts/base.d.ts",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/bikeleasing-service"
+    "registry": "https://npm.pkg.github.com/"
   },
   "files": [
     "build/**/*"

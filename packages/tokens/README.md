@@ -26,12 +26,29 @@ Our design tokens are organized into the following categories:
 
 ### Installation
 
+#### Step 1: Configure access to GitHub Packages
+
 ```bash
 # Configure .npmrc for GitHub Packages
 @bikeleasing-service:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
 
-# Then install with your package manager
+# Or for Yarn v4, configure .yarnrc.yml
+npmRegistries:
+  "https://npm.pkg.github.com":
+    npmAuthToken: YOUR_GITHUB_TOKEN
+```
+
+#### Step 2: Install the package
+
+```bash
+# Using npm
+npm install @bikeleasing-service/pedal-tokens
+
+# Using yarn
+yarn add @bikeleasing-service/pedal-tokens
+
+# Using pnpm
 pnpm add @bikeleasing-service/pedal-tokens
 ```
 
