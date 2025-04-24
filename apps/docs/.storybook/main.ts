@@ -40,8 +40,7 @@ const config: StorybookConfig = {
           },
         ],
       },
-      // Add base URL for GitHub Pages
-      base: configType === "PRODUCTION" ? "/pedal-ui/" : "/",
+      base: "./",
     };
   },
 
