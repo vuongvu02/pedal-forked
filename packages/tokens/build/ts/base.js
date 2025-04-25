@@ -44,13 +44,13 @@ export default {
     "Background Alternative 2": "#eaf3d2",
     "Background Alternative 3": "#707070",
     "Icon White": "#ffffff",
-    Divider: "#c6c6c6",
     Elevation: {
       "Background 1": "#ffffff",
       "Background 2": "#ffffff",
       "Icons White": "#f5f5f5",
       "Icons Black": "#151515",
     },
+    Divider: "#c6c6c6",
     Tag: "#d5e6a5",
     Text: {
       Primary: "#000000",

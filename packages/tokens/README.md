@@ -69,7 +69,14 @@ The complete collection with default settings:
 
 ### Installation
 
-#### Step 1: Configure access to GitHub Packages
+#### Step 1: Generate a GitHub token
+
+1. Go to your GitHub account settings → [Personal access tokens](https://github.com/settings/tokens)
+2. Click "Generate new token" (classic)
+3. Give your token a name and select the `read:packages` scope
+4. Copy the generated token for use in your configuration
+
+#### Step 2: Configure access to GitHub Packages
 
 ```bash
 # Configure .npmrc for GitHub Packages
@@ -82,7 +89,7 @@ npmRegistries:
     npmAuthToken: YOUR_GITHUB_TOKEN
 ```
 
-#### Step 2: Install the package
+#### Step 3: Install the package
 
 ```bash
 # Using npm
@@ -136,8 +143,6 @@ pnpm build
 # Just sync tokens from source files
 pnpm sync-tokens
 ```
-
-### Figma Integration
 
 ### Figma Integration
 

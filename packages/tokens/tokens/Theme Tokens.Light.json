@@ -92,21 +92,6 @@
         }
       }
     },
-    "Divider": {
-      "$type": "color",
-      "$value": "{Color.Neutral.200}",
-      "$description": "",
-      "$extensions": {
-        "com.figma": {
-          "hiddenFromPublishing": false,
-          "scopes": [
-            "STROKE_COLOR"
-          ],
-          "codeSyntax": {},
-          "mode": "Light"
-        }
-      }
-    },
     "Elevation": {
       "Background 1": {
         "$type": "color",
@@ -170,6 +155,21 @@
             "codeSyntax": {},
             "mode": "Light"
           }
+        }
+      }
+    },
+    "Divider": {
+      "$type": "color",
+      "$value": "{Color.Neutral.200}",
+      "$description": "",
+      "$extensions": {
+        "com.figma": {
+          "hiddenFromPublishing": false,
+          "scopes": [
+            "STROKE_COLOR"
+          ],
+          "codeSyntax": {},
+          "mode": "Light"
         }
       }
     },

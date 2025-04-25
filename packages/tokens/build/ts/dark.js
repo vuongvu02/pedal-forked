@@ -10,13 +10,13 @@ export default {
     "Background Alternative 2": "#3e510d",
     "Background Alternative 3": "#707070",
     "Icon White": "#ffffff",
-    Divider: "#4d4d4d",
     Elevation: {
       "Background 1": "#222222",
       "Background 2": "#333333",
       "Icons White": "#151515",
       "Icons Black": "#f5f5f5",
     },
+    Divider: "#4d4d4d",
     Tag: "#d5e6a5",
     Text: {
       Primary: "#ffffff",

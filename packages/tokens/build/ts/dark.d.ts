@@ -10,13 +10,13 @@ export type DesignToken = {
     "Background Alternative 2": string;
     "Background Alternative 3": string;
     "Icon White": string;
-    Divider: string;
     Elevation: {
       "Background 1": string;
       "Background 2": string;
       "Icons White": string;
       "Icons Black": string;
     };
+    Divider: string;
     Tag: string;
     Text: {
       Primary: string;
