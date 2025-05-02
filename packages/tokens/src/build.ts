@@ -67,6 +67,12 @@ const getConfigs = (): Config[] => {
   return [getBaseTokenSet(), ...getTokenSets(THEME_MODES), ...getTokenSets(RESPONSIVE_MODES)].map(
     ({ mode = 'base', tokenSource }) => ({
       source: tokenSource,
+      hooks: {
+        filters: {
+          'ignore-primitives-in-mode': (token) =>
+            mode === 'base' || !String(token.filePath).toLowerCase().includes(PRIMITIVE_SET_NAME),
+        },
+      },
       platforms: {
         css: {
           transformGroup: 'css',
@@ -76,6 +82,7 @@ const getConfigs = (): Config[] => {
             {
               destination: `${mode}.css`,
               format: 'css/advanced',
+              filter: 'ignore-primitives-in-mode',
               options: {
                 outputReferences: true,
                 selector: getCSSThemeSelector(mode),
@@ -93,6 +100,7 @@ const getConfigs = (): Config[] => {
             {
               destination: `${mode}.scss`,
               format: 'scss/variables',
+              filter: 'ignore-primitives-in-mode',
               options: {
                 outputReferences: true,
               },
@@ -108,10 +116,12 @@ const getConfigs = (): Config[] => {
             {
               destination: `${mode}.js`,
               format: 'javascript/esm',
+              filter: 'ignore-primitives-in-mode',
             },
             {
               destination: `${mode}.d.ts`,
               format: 'typescript/esm-declarations',
+              filter: 'ignore-primitives-in-mode',
             },
           ],
         },
