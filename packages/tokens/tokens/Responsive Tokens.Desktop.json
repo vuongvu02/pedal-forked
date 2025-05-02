@@ -1,32 +1,32 @@
 {
   "Icon Size": {
-    "$type": "dimension",
-    "$value": "{Size.24}",
     "$description": "",
     "$extensions": {
       "com.figma": {
-        "hiddenFromPublishing": false,
-        "scopes": [
-          "ALL_SCOPES"
-        ],
         "codeSyntax": {},
-        "mode": "Desktop"
+        "hiddenFromPublishing": false,
+        "mode": "Desktop",
+        "scopes": {
+          "0": "ALL_SCOPES"
+        }
       }
-    }
+    },
+    "$type": "dimension",
+    "$value": "{Size.24}"
   },
   "Text Input Vertical Padding": {
-    "$type": "dimension",
-    "$value": "{Size.4}",
     "$description": "",
     "$extensions": {
       "com.figma": {
-        "hiddenFromPublishing": false,
-        "scopes": [
-          "ALL_SCOPES"
-        ],
         "codeSyntax": {},
-        "mode": "Desktop"
+        "hiddenFromPublishing": false,
+        "mode": "Desktop",
+        "scopes": {
+          "0": "ALL_SCOPES"
+        }
       }
-    }
+    },
+    "$type": "dimension",
+    "$value": "{Size.4}"
   }
 }

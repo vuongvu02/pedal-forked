@@ -4,46 +4,17 @@
 
 export default {
   Color: {
-    Brand: "#95c11e",
     Background: "#ffffff",
     "Background Alternative 1": "#e2e2e2",
     "Background Alternative 2": "#eaf3d2",
     "Background Alternative 3": "#707070",
-    "Icon White": "#ffffff",
+    Brand: "#95c11e",
+    Divider: "#c6c6c6",
     Elevation: {
       "Background 1": "#ffffff",
       "Background 2": "#ffffff",
-      "Icons White": "#f5f5f5",
       "Icons Black": "#151515",
-    },
-    Divider: "#c6c6c6",
-    Tag: "#d5e6a5",
-    Text: {
-      Primary: "#000000",
-      Secondary: "#707070",
-      Disabled: "#929292",
-      Error: "#b00000",
-      "Fixed Black": "#000000",
-      "Fixed White": "#ffffff",
-    },
-    Interactive: {
-      Background: {
-        Default: "#749900",
-        Hover: "#a8cb49",
-        Disabled: "#c6c6c6",
-      },
-      "Background Alternative 1": "#749900",
-      "Background Alternative 2": "#5b7900",
-      Text: "#5b7900",
-      Underline: {
-        Hover: "#5b7900",
-        "Hover Neutral": "#707070",
-        Default: "#749900",
-      },
-      Border: {
-        Default: "#707070",
-        Selected: "#95c11e",
-      },
+      "Icons White": "#f5f5f5",
     },
     Hint: {
       Error: {
@@ -55,10 +26,39 @@ export default {
         Border: "#5b7900",
       },
     },
+    "Icon White": "#ffffff",
+    Interactive: {
+      Background: {
+        Default: "#749900",
+        Disabled: "#c6c6c6",
+        Hover: "#a8cb49",
+      },
+      "Background Alternative 1": "#749900",
+      "Background Alternative 2": "#5b7900",
+      Border: {
+        Default: "#707070",
+        Selected: "#95c11e",
+      },
+      Text: "#5b7900",
+      Underline: {
+        Default: "#749900",
+        Hover: "#5b7900",
+        "Hover Neutral": "#707070",
+      },
+    },
+    Tag: "#d5e6a5",
+    Text: {
+      Disabled: "#929292",
+      Error: "#b00000",
+      "Fixed Black": "#000000",
+      "Fixed White": "#ffffff",
+      Primary: "#000000",
+      Secondary: "#707070",
+    },
   },
   Focus: {
     Color: "#000000",
-    Thickness: "0.125rem",
     Offset: "0.25rem",
+    Thickness: "0.125rem",
   },
 };

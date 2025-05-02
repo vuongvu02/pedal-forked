@@ -8,17 +8,6 @@ export default {
       Primary: "Titillium Web",
       Secondary: "Roboto Slab",
     },
-    Size: {
-      xs: "0.75rem",
-      s: "0.875rem",
-      m: "1rem",
-      l: "1.125rem",
-      xl: "1.25rem",
-      "2xl": "1.25rem",
-      "3xl": "1.5rem",
-      "4xl": "1.5rem",
-      "5xl": "2.1875rem",
-    },
     "Line Height": {
       xs: "1.125rem",
       s: "1.3125rem",
@@ -30,6 +19,17 @@ export default {
       "4xl": "2.25rem",
       "5xl": "3rem",
     },
+    Size: {
+      xs: "0.75rem",
+      s: "0.875rem",
+      m: "1rem",
+      l: "1.125rem",
+      xl: "1.25rem",
+      "2xl": "1.25rem",
+      "3xl": "1.5rem",
+      "4xl": "1.5rem",
+      "5xl": "2.1875rem",
+    },
     Weight: {
       Normal: 400,
       Medium: 500,
@@ -38,46 +38,17 @@ export default {
     },
   },
   Color: {
-    Brand: "#95c11e",
     Background: "#ffffff",
     "Background Alternative 1": "#e2e2e2",
     "Background Alternative 2": "#eaf3d2",
     "Background Alternative 3": "#707070",
-    "Icon White": "#ffffff",
+    Brand: "#95c11e",
+    Divider: "#c6c6c6",
     Elevation: {
       "Background 1": "#ffffff",
       "Background 2": "#ffffff",
-      "Icons White": "#f5f5f5",
       "Icons Black": "#151515",
-    },
-    Divider: "#c6c6c6",
-    Tag: "#d5e6a5",
-    Text: {
-      Primary: "#000000",
-      Secondary: "#707070",
-      Disabled: "#929292",
-      Error: "#b00000",
-      "Fixed Black": "#000000",
-      "Fixed White": "#ffffff",
-    },
-    Interactive: {
-      Background: {
-        Default: "#749900",
-        Hover: "#a8cb49",
-        Disabled: "#c6c6c6",
-      },
-      "Background Alternative 1": "#749900",
-      "Background Alternative 2": "#5b7900",
-      Text: "#5b7900",
-      Underline: {
-        Hover: "#5b7900",
-        "Hover Neutral": "#707070",
-        Default: "#749900",
-      },
-      Border: {
-        Default: "#707070",
-        Selected: "#95c11e",
-      },
+      "Icons White": "#f5f5f5",
     },
     Hint: {
       Error: {
@@ -89,23 +60,39 @@ export default {
         Border: "#5b7900",
       },
     },
+    "Icon White": "#ffffff",
+    Interactive: {
+      Background: {
+        Default: "#749900",
+        Disabled: "#c6c6c6",
+        Hover: "#a8cb49",
+      },
+      "Background Alternative 1": "#749900",
+      "Background Alternative 2": "#5b7900",
+      Border: {
+        Default: "#707070",
+        Selected: "#95c11e",
+      },
+      Text: "#5b7900",
+      Underline: {
+        Default: "#749900",
+        Hover: "#5b7900",
+        "Hover Neutral": "#707070",
+      },
+    },
+    Tag: "#d5e6a5",
+    Text: {
+      Disabled: "#929292",
+      Error: "#b00000",
+      "Fixed Black": "#000000",
+      "Fixed White": "#ffffff",
+      Primary: "#000000",
+      Secondary: "#707070",
+    },
     Base: {
+      Black: "#000000",
       Transparent: "#ffffff00",
       White: "#ffffff",
-      Black: "#000000",
-    },
-    Neutral: {
-      "50": "#f5f5f5",
-      "100": "#e2e2e2",
-      "200": "#c6c6c6",
-      "300": "#a9a9a9",
-      "400": "#929292",
-      "500": "#707070",
-      "600": "#666666",
-      "700": "#4d4d4d",
-      "800": "#333333",
-      "900": "#222222",
-      "950": "#151515",
     },
     Green: {
       "50": "#f5f9e9",
@@ -119,6 +106,19 @@ export default {
       "800": "#5b7900",
       "900": "#3e510d",
       "950": "#2c3a09",
+    },
+    Neutral: {
+      "50": "#f5f5f5",
+      "100": "#e2e2e2",
+      "200": "#c6c6c6",
+      "300": "#a9a9a9",
+      "400": "#929292",
+      "500": "#707070",
+      "600": "#666666",
+      "700": "#4d4d4d",
+      "800": "#333333",
+      "900": "#222222",
+      "950": "#151515",
     },
     Red: {
       "50": "#fdf2f2",
@@ -136,8 +136,8 @@ export default {
   },
   Focus: {
     Color: "#000000",
-    Thickness: "0.125rem",
     Offset: "0.25rem",
+    Thickness: "0.125rem",
   },
   "Icon Size": "2rem",
   "Text Input Vertical Padding": "0.5rem",
@@ -160,6 +160,12 @@ export default {
     "112": "7rem",
     "128": "8rem",
     "160": "10rem",
+  },
+  Radius: {
+    None: "0",
+    Small: "0.25rem",
+    Medium: "0.5rem",
+    Large: "1rem",
   },
   Sizing: {
     "1": "0.0625rem",
@@ -188,11 +194,46 @@ export default {
     "128": "8rem",
     "160": "10rem",
   },
-  Radius: {
-    None: "0",
-    Small: "0.25rem",
-    Medium: "0.5rem",
-    Large: "1rem",
+  Button: {
+    Background: {
+      Color: {
+        Primary: {
+          Active: "#a8cb49",
+          Default: "#95c11e",
+          Disabled: "#c6c6c6",
+          Focus: "#95c11e",
+          Hover: "#a8cb49",
+        },
+        Secondary: {
+          Active: "#a8cb49",
+          Default: "#ffffff00",
+          "Default Opaque": "#ffffff",
+          Disabled: "#ffffff00",
+          Focus: "#ffffff00",
+          Hover: "#a8cb49",
+        },
+      },
+    },
+    Border: {
+      Color: {
+        Secondary: {
+          Default: "#95c11e",
+          Disabled: "#c6c6c6",
+        },
+      },
+    },
+    Text: {
+      Color: {
+        Primary: {
+          Default: "#000000",
+          Disabled: "#929292",
+        },
+        Secondary: {
+          Default: "#000000",
+          Disabled: "#929292",
+        },
+      },
+    },
   },
   Link: {
     Text: {
@@ -204,66 +245,25 @@ export default {
     },
     Underline: {
       Color: {
-        Tertiary: {
-          Default: "#000000",
-          Active: "#707070",
-        },
         Primary: {
-          Default: "#749900",
           Active: "#5b7900",
+          Default: "#749900",
         },
         Secondary: {
-          Hover: "#5b7900",
           Active: "#5b7900",
           Focus: "#5b7900",
+          Hover: "#5b7900",
+        },
+        Tertiary: {
+          Active: "#707070",
+          Default: "#000000",
         },
       },
+      Offset: "0.25rem",
       Width: {
         Primary: "0.125rem",
         Secondary: "0.125rem",
         Tertiary: "0.0625rem",
-      },
-      Offset: "0.25rem",
-    },
-  },
-  Button: {
-    Text: {
-      Color: {
-        Primary: {
-          Default: "#000000",
-          Disabled: "#929292",
-        },
-        Secondary: {
-          Default: "#000000",
-          Disabled: "#929292",
-        },
-      },
-    },
-    Background: {
-      Color: {
-        Primary: {
-          Default: "#95c11e",
-          Hover: "#a8cb49",
-          Active: "#a8cb49",
-          Focus: "#95c11e",
-          Disabled: "#c6c6c6",
-        },
-        Secondary: {
-          Default: "#ffffff00",
-          "Default Opaque": "#ffffff",
-          Hover: "#a8cb49",
-          Active: "#a8cb49",
-          Focus: "#ffffff00",
-          Disabled: "#ffffff00",
-        },
-      },
-    },
-    Border: {
-      Color: {
-        Secondary: {
-          Default: "#95c11e",
-          Disabled: "#c6c6c6",
-        },
       },
     },
   },

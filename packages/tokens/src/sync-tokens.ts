@@ -3,7 +3,12 @@ import * as fs from 'fs';
 import { GetLocalVariablesResponse } from '@figma/rest-api-spec';
 import FigmaApi from './figma-api.js';
 import { Token, TokensFile } from './types.js';
-import { tokenTypeFromVariable, tokenValueFromVariable, logSuccess } from './utils.js';
+import {
+  tokenTypeFromVariable,
+  tokenValueFromVariable,
+  logSuccess,
+  sortObjectDeep,
+} from './utils.js';
 import { EXCEPTIONS, OUTPUT_DIR } from './constants.js';
 
 export function tokenFilesFromLocalVariables(localVariablesResponse: GetLocalVariablesResponse) {
@@ -70,7 +75,7 @@ async function main() {
   const fileKey = process.env.FILE_KEY;
   const api = new FigmaApi(process.env.PERSONAL_ACCESS_TOKEN);
   const localVariables = await api.getLocalVariables(fileKey);
-  const tokensFiles = tokenFilesFromLocalVariables(localVariables);
+  const tokensFiles = sortObjectDeep(tokenFilesFromLocalVariables(localVariables));
 
   if (!fs.existsSync(OUTPUT_DIR)) {
     fs.mkdirSync(OUTPUT_DIR);

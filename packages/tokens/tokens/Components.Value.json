@@ -1,458 +1,196 @@
 {
-  "Link": {
-    "Text": {
-      "Color": {
-        "Primary": {
-          "$type": "color",
-          "$value": "{Color.Text.Primary}",
-          "$description": "",
-          "$extensions": {
-            "com.figma": {
-              "hiddenFromPublishing": false,
-              "scopes": [],
-              "codeSyntax": {},
-              "mode": "Value"
-            }
-          }
-        },
-        "Secondary": {
-          "$type": "color",
-          "$value": "{Color.Interactive.Text}",
-          "$description": "",
-          "$extensions": {
-            "com.figma": {
-              "hiddenFromPublishing": false,
-              "scopes": [],
-              "codeSyntax": {},
-              "mode": "Value"
-            }
-          }
-        },
-        "Tertiary": {
-          "$type": "color",
-          "$value": "{Color.Text.Primary}",
-          "$description": "",
-          "$extensions": {
-            "com.figma": {
-              "hiddenFromPublishing": false,
-              "scopes": [],
-              "codeSyntax": {},
-              "mode": "Value"
-            }
-          }
-        }
-      }
-    },
-    "Underline": {
-      "Color": {
-        "Tertiary": {
-          "Default": {
-            "$type": "color",
-            "$value": "{Color.Text.Primary}",
-            "$description": "",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [],
-                "codeSyntax": {},
-                "mode": "Value"
-              }
-            }
-          },
-          "Active": {
-            "$type": "color",
-            "$value": "{Color.Interactive.Underline.Hover Neutral}",
-            "$description": "",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [],
-                "codeSyntax": {},
-                "mode": "Value"
-              }
-            }
-          }
-        },
-        "Primary": {
-          "Default": {
-            "$type": "color",
-            "$value": "{Color.Interactive.Underline.Default}",
-            "$description": "",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [],
-                "codeSyntax": {},
-                "mode": "Value"
-              }
-            }
-          },
-          "Active": {
-            "$type": "color",
-            "$value": "{Color.Interactive.Underline.Hover}",
-            "$description": "",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [],
-                "codeSyntax": {},
-                "mode": "Value"
-              }
-            }
-          }
-        },
-        "Secondary": {
-          "Hover": {
-            "$type": "color",
-            "$value": "{Color.Interactive.Underline.Hover}",
-            "$description": "",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [],
-                "codeSyntax": {},
-                "mode": "Value"
-              }
-            }
-          },
-          "Active": {
-            "$type": "color",
-            "$value": "{Color.Interactive.Underline.Hover}",
-            "$description": "",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [],
-                "codeSyntax": {},
-                "mode": "Value"
-              }
-            }
-          },
-          "Focus": {
-            "$type": "color",
-            "$value": "{Color.Interactive.Underline.Hover}",
-            "$description": "",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [],
-                "codeSyntax": {},
-                "mode": "Value"
-              }
-            }
-          }
-        }
-      },
-      "Width": {
-        "Primary": {
-          "$type": "dimension",
-          "$value": "{Sizing.2}",
-          "$description": "",
-          "$extensions": {
-            "com.figma": {
-              "hiddenFromPublishing": false,
-              "scopes": [],
-              "codeSyntax": {},
-              "mode": "Value"
-            }
-          }
-        },
-        "Secondary": {
-          "$type": "dimension",
-          "$value": "{Sizing.2}",
-          "$description": "",
-          "$extensions": {
-            "com.figma": {
-              "hiddenFromPublishing": false,
-              "scopes": [],
-              "codeSyntax": {},
-              "mode": "Value"
-            }
-          }
-        },
-        "Tertiary": {
-          "$type": "dimension",
-          "$value": "{Sizing.1}",
-          "$description": "",
-          "$extensions": {
-            "com.figma": {
-              "hiddenFromPublishing": false,
-              "scopes": [],
-              "codeSyntax": {},
-              "mode": "Value"
-            }
-          }
-        }
-      },
-      "Offset": {
-        "$type": "dimension",
-        "$value": "{Sizing.4}",
-        "$description": "",
-        "$extensions": {
-          "com.figma": {
-            "hiddenFromPublishing": false,
-            "scopes": [],
-            "codeSyntax": {},
-            "mode": "Value"
-          }
-        }
-      }
-    }
-  },
   "Button": {
-    "Text": {
-      "Color": {
-        "Primary": {
-          "Default": {
-            "$type": "color",
-            "$value": "{Color.Text.Fixed Black}",
-            "$description": "",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [
-                  "TEXT_FILL"
-                ],
-                "codeSyntax": {},
-                "mode": "Value"
-              }
-            }
-          },
-          "Disabled": {
-            "$type": "color",
-            "$value": "{Color.Text.Disabled}",
-            "$description": "",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [],
-                "codeSyntax": {},
-                "mode": "Value"
-              }
-            }
-          }
-        },
-        "Secondary": {
-          "Default": {
-            "$type": "color",
-            "$value": "{Color.Text.Primary}",
-            "$description": "",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [],
-                "codeSyntax": {},
-                "mode": "Value"
-              }
-            }
-          },
-          "Disabled": {
-            "$type": "color",
-            "$value": "{Color.Text.Disabled}",
-            "$description": "",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [],
-                "codeSyntax": {},
-                "mode": "Value"
-              }
-            }
-          }
-        }
-      }
-    },
     "Background": {
       "Color": {
         "Primary": {
-          "Default": {
-            "$type": "color",
-            "$value": "{Color.Brand}",
-            "$description": "",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [
-                  "FRAME_FILL",
-                  "SHAPE_FILL",
-                  "STROKE_COLOR"
-                ],
-                "codeSyntax": {},
-                "mode": "Value"
-              }
-            }
-          },
-          "Hover": {
-            "$type": "color",
-            "$value": "{Color.Interactive.Background.Hover}",
-            "$description": "",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [
-                  "FRAME_FILL",
-                  "SHAPE_FILL",
-                  "STROKE_COLOR"
-                ],
-                "codeSyntax": {},
-                "mode": "Value"
-              }
-            }
-          },
           "Active": {
-            "$type": "color",
-            "$value": "{Color.Interactive.Background.Hover}",
             "$description": "",
             "$extensions": {
               "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [
-                  "FRAME_FILL",
-                  "SHAPE_FILL",
-                  "STROKE_COLOR"
-                ],
                 "codeSyntax": {},
-                "mode": "Value"
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {
+                  "0": "FRAME_FILL",
+                  "1": "SHAPE_FILL",
+                  "2": "STROKE_COLOR"
+                }
               }
-            }
+            },
+            "$type": "color",
+            "$value": "{Color.Interactive.Background.Hover}"
           },
-          "Focus": {
-            "$type": "color",
-            "$value": "{Color.Brand}",
+          "Default": {
             "$description": "",
             "$extensions": {
               "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [
-                  "FRAME_FILL",
-                  "SHAPE_FILL",
-                  "STROKE_COLOR"
-                ],
                 "codeSyntax": {},
-                "mode": "Value"
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {
+                  "0": "FRAME_FILL",
+                  "1": "SHAPE_FILL",
+                  "2": "STROKE_COLOR"
+                }
               }
-            }
+            },
+            "$type": "color",
+            "$value": "{Color.Brand}"
           },
           "Disabled": {
-            "$type": "color",
-            "$value": "{Color.Interactive.Background.Disabled}",
             "$description": "",
             "$extensions": {
               "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [
-                  "FRAME_FILL",
-                  "SHAPE_FILL",
-                  "STROKE_COLOR"
-                ],
                 "codeSyntax": {},
-                "mode": "Value"
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {
+                  "0": "FRAME_FILL",
+                  "1": "SHAPE_FILL",
+                  "2": "STROKE_COLOR"
+                }
               }
-            }
+            },
+            "$type": "color",
+            "$value": "{Color.Interactive.Background.Disabled}"
+          },
+          "Focus": {
+            "$description": "",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {},
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {
+                  "0": "FRAME_FILL",
+                  "1": "SHAPE_FILL",
+                  "2": "STROKE_COLOR"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": "{Color.Brand}"
+          },
+          "Hover": {
+            "$description": "",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {},
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {
+                  "0": "FRAME_FILL",
+                  "1": "SHAPE_FILL",
+                  "2": "STROKE_COLOR"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": "{Color.Interactive.Background.Hover}"
           }
         },
         "Secondary": {
-          "Default": {
-            "$type": "color",
-            "$value": "{Color.Base.Transparent}",
+          "Active": {
             "$description": "",
             "$extensions": {
               "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [
-                  "FRAME_FILL",
-                  "SHAPE_FILL",
-                  "STROKE_COLOR"
-                ],
                 "codeSyntax": {},
-                "mode": "Value"
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {
+                  "0": "FRAME_FILL",
+                  "1": "SHAPE_FILL",
+                  "2": "STROKE_COLOR"
+                }
               }
-            }
+            },
+            "$type": "color",
+            "$value": "{Color.Interactive.Background.Hover}"
+          },
+          "Default": {
+            "$description": "",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {},
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {
+                  "0": "FRAME_FILL",
+                  "1": "SHAPE_FILL",
+                  "2": "STROKE_COLOR"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": "{Color.Base.Transparent}"
           },
           "Default Opaque": {
-            "$type": "color",
-            "$value": "{Color.Base.White}",
             "$description": "",
             "$extensions": {
               "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [
-                  "FRAME_FILL",
-                  "SHAPE_FILL",
-                  "STROKE_COLOR"
-                ],
                 "codeSyntax": {},
-                "mode": "Value"
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {
+                  "0": "FRAME_FILL",
+                  "1": "SHAPE_FILL",
+                  "2": "STROKE_COLOR"
+                }
               }
-            }
-          },
-          "Hover": {
+            },
             "$type": "color",
-            "$value": "{Color.Interactive.Background.Hover}",
-            "$description": "",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [
-                  "FRAME_FILL",
-                  "SHAPE_FILL",
-                  "STROKE_COLOR"
-                ],
-                "codeSyntax": {},
-                "mode": "Value"
-              }
-            }
-          },
-          "Active": {
-            "$type": "color",
-            "$value": "{Color.Interactive.Background.Hover}",
-            "$description": "",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [
-                  "FRAME_FILL",
-                  "SHAPE_FILL",
-                  "STROKE_COLOR"
-                ],
-                "codeSyntax": {},
-                "mode": "Value"
-              }
-            }
-          },
-          "Focus": {
-            "$type": "color",
-            "$value": "{Color.Base.Transparent}",
-            "$description": "",
-            "$extensions": {
-              "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [
-                  "FRAME_FILL",
-                  "SHAPE_FILL",
-                  "STROKE_COLOR"
-                ],
-                "codeSyntax": {},
-                "mode": "Value"
-              }
-            }
+            "$value": "{Color.Base.White}"
           },
           "Disabled": {
-            "$type": "color",
-            "$value": "{Color.Base.Transparent}",
             "$description": "",
             "$extensions": {
               "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [
-                  "FRAME_FILL",
-                  "SHAPE_FILL",
-                  "STROKE_COLOR"
-                ],
                 "codeSyntax": {},
-                "mode": "Value"
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {
+                  "0": "FRAME_FILL",
+                  "1": "SHAPE_FILL",
+                  "2": "STROKE_COLOR"
+                }
               }
-            }
+            },
+            "$type": "color",
+            "$value": "{Color.Base.Transparent}"
+          },
+          "Focus": {
+            "$description": "",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {},
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {
+                  "0": "FRAME_FILL",
+                  "1": "SHAPE_FILL",
+                  "2": "STROKE_COLOR"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": "{Color.Base.Transparent}"
+          },
+          "Hover": {
+            "$description": "",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {},
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {
+                  "0": "FRAME_FILL",
+                  "1": "SHAPE_FILL",
+                  "2": "STROKE_COLOR"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": "{Color.Interactive.Background.Hover}"
           }
         }
       }
@@ -461,31 +199,293 @@
       "Color": {
         "Secondary": {
           "Default": {
-            "$type": "color",
-            "$value": "{Color.Brand}",
             "$description": "",
             "$extensions": {
               "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [],
                 "codeSyntax": {},
-                "mode": "Value"
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {}
               }
-            }
+            },
+            "$type": "color",
+            "$value": "{Color.Brand}"
           },
           "Disabled": {
-            "$type": "color",
-            "$value": "{Color.Interactive.Background.Disabled}",
             "$description": "",
             "$extensions": {
               "com.figma": {
-                "hiddenFromPublishing": false,
-                "scopes": [],
                 "codeSyntax": {},
-                "mode": "Value"
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {}
               }
-            }
+            },
+            "$type": "color",
+            "$value": "{Color.Interactive.Background.Disabled}"
           }
+        }
+      }
+    },
+    "Text": {
+      "Color": {
+        "Primary": {
+          "Default": {
+            "$description": "",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {},
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {
+                  "0": "TEXT_FILL"
+                }
+              }
+            },
+            "$type": "color",
+            "$value": "{Color.Text.Fixed Black}"
+          },
+          "Disabled": {
+            "$description": "",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {},
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {}
+              }
+            },
+            "$type": "color",
+            "$value": "{Color.Text.Disabled}"
+          }
+        },
+        "Secondary": {
+          "Default": {
+            "$description": "",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {},
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {}
+              }
+            },
+            "$type": "color",
+            "$value": "{Color.Text.Primary}"
+          },
+          "Disabled": {
+            "$description": "",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {},
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {}
+              }
+            },
+            "$type": "color",
+            "$value": "{Color.Text.Disabled}"
+          }
+        }
+      }
+    }
+  },
+  "Link": {
+    "Text": {
+      "Color": {
+        "Primary": {
+          "$description": "",
+          "$extensions": {
+            "com.figma": {
+              "codeSyntax": {},
+              "hiddenFromPublishing": false,
+              "mode": "Value",
+              "scopes": {}
+            }
+          },
+          "$type": "color",
+          "$value": "{Color.Text.Primary}"
+        },
+        "Secondary": {
+          "$description": "",
+          "$extensions": {
+            "com.figma": {
+              "codeSyntax": {},
+              "hiddenFromPublishing": false,
+              "mode": "Value",
+              "scopes": {}
+            }
+          },
+          "$type": "color",
+          "$value": "{Color.Interactive.Text}"
+        },
+        "Tertiary": {
+          "$description": "",
+          "$extensions": {
+            "com.figma": {
+              "codeSyntax": {},
+              "hiddenFromPublishing": false,
+              "mode": "Value",
+              "scopes": {}
+            }
+          },
+          "$type": "color",
+          "$value": "{Color.Text.Primary}"
+        }
+      }
+    },
+    "Underline": {
+      "Color": {
+        "Primary": {
+          "Active": {
+            "$description": "",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {},
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {}
+              }
+            },
+            "$type": "color",
+            "$value": "{Color.Interactive.Underline.Hover}"
+          },
+          "Default": {
+            "$description": "",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {},
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {}
+              }
+            },
+            "$type": "color",
+            "$value": "{Color.Interactive.Underline.Default}"
+          }
+        },
+        "Secondary": {
+          "Active": {
+            "$description": "",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {},
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {}
+              }
+            },
+            "$type": "color",
+            "$value": "{Color.Interactive.Underline.Hover}"
+          },
+          "Focus": {
+            "$description": "",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {},
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {}
+              }
+            },
+            "$type": "color",
+            "$value": "{Color.Interactive.Underline.Hover}"
+          },
+          "Hover": {
+            "$description": "",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {},
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {}
+              }
+            },
+            "$type": "color",
+            "$value": "{Color.Interactive.Underline.Hover}"
+          }
+        },
+        "Tertiary": {
+          "Active": {
+            "$description": "",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {},
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {}
+              }
+            },
+            "$type": "color",
+            "$value": "{Color.Interactive.Underline.Hover Neutral}"
+          },
+          "Default": {
+            "$description": "",
+            "$extensions": {
+              "com.figma": {
+                "codeSyntax": {},
+                "hiddenFromPublishing": false,
+                "mode": "Value",
+                "scopes": {}
+              }
+            },
+            "$type": "color",
+            "$value": "{Color.Text.Primary}"
+          }
+        }
+      },
+      "Offset": {
+        "$description": "",
+        "$extensions": {
+          "com.figma": {
+            "codeSyntax": {},
+            "hiddenFromPublishing": false,
+            "mode": "Value",
+            "scopes": {}
+          }
+        },
+        "$type": "dimension",
+        "$value": "{Sizing.4}"
+      },
+      "Width": {
+        "Primary": {
+          "$description": "",
+          "$extensions": {
+            "com.figma": {
+              "codeSyntax": {},
+              "hiddenFromPublishing": false,
+              "mode": "Value",
+              "scopes": {}
+            }
+          },
+          "$type": "dimension",
+          "$value": "{Sizing.2}"
+        },
+        "Secondary": {
+          "$description": "",
+          "$extensions": {
+            "com.figma": {
+              "codeSyntax": {},
+              "hiddenFromPublishing": false,
+              "mode": "Value",
+              "scopes": {}
+            }
+          },
+          "$type": "dimension",
+          "$value": "{Sizing.2}"
+        },
+        "Tertiary": {
+          "$description": "",
+          "$extensions": {
+            "com.figma": {
+              "codeSyntax": {},
+              "hiddenFromPublishing": false,
+              "mode": "Value",
+              "scopes": {}
+            }
+          },
+          "$type": "dimension",
+          "$value": "{Sizing.1}"
         }
       }
     }

@@ -8,7 +8,7 @@ export type DesignToken = {
       Primary: string;
       Secondary: string;
     };
-    Size: {
+    "Line Height": {
       xs: string;
       s: string;
       m: string;
@@ -19,7 +19,7 @@ export type DesignToken = {
       "4xl": string;
       "5xl": string;
     };
-    "Line Height": {
+    Size: {
       xs: string;
       s: string;
       m: string;
@@ -38,46 +38,17 @@ export type DesignToken = {
     };
   };
   Color: {
-    Brand: string;
     Background: string;
     "Background Alternative 1": string;
     "Background Alternative 2": string;
     "Background Alternative 3": string;
-    "Icon White": string;
+    Brand: string;
+    Divider: string;
     Elevation: {
       "Background 1": string;
       "Background 2": string;
-      "Icons White": string;
       "Icons Black": string;
-    };
-    Divider: string;
-    Tag: string;
-    Text: {
-      Primary: string;
-      Secondary: string;
-      Disabled: string;
-      Error: string;
-      "Fixed Black": string;
-      "Fixed White": string;
-    };
-    Interactive: {
-      Background: {
-        Default: string;
-        Hover: string;
-        Disabled: string;
-      };
-      "Background Alternative 1": string;
-      "Background Alternative 2": string;
-      Text: string;
-      Underline: {
-        Hover: string;
-        "Hover Neutral": string;
-        Default: string;
-      };
-      Border: {
-        Default: string;
-        Selected: string;
-      };
+      "Icons White": string;
     };
     Hint: {
       Error: {
@@ -89,12 +60,41 @@ export type DesignToken = {
         Border: string;
       };
     };
+    "Icon White": string;
+    Interactive: {
+      Background: {
+        Default: string;
+        Disabled: string;
+        Hover: string;
+      };
+      "Background Alternative 1": string;
+      "Background Alternative 2": string;
+      Border: {
+        Default: string;
+        Selected: string;
+      };
+      Text: string;
+      Underline: {
+        Default: string;
+        Hover: string;
+        "Hover Neutral": string;
+      };
+    };
+    Tag: string;
+    Text: {
+      Disabled: string;
+      Error: string;
+      "Fixed Black": string;
+      "Fixed White": string;
+      Primary: string;
+      Secondary: string;
+    };
     Base: {
+      Black: string;
       Transparent: string;
       White: string;
-      Black: string;
     };
-    Neutral: {
+    Green: {
       "50": string;
       "100": string;
       "200": string;
@@ -107,7 +107,7 @@ export type DesignToken = {
       "900": string;
       "950": string;
     };
-    Green: {
+    Neutral: {
       "50": string;
       "100": string;
       "200": string;
@@ -136,8 +136,8 @@ export type DesignToken = {
   };
   Focus: {
     Color: string;
-    Thickness: string;
     Offset: string;
+    Thickness: string;
   };
   "Icon Size": string;
   "Text Input Vertical Padding": string;
@@ -160,6 +160,12 @@ export type DesignToken = {
     "112": string;
     "128": string;
     "160": string;
+  };
+  Radius: {
+    None: string;
+    Small: string;
+    Medium: string;
+    Large: string;
   };
   Sizing: {
     "1": string;
@@ -188,11 +194,46 @@ export type DesignToken = {
     "128": string;
     "160": string;
   };
-  Radius: {
-    None: string;
-    Small: string;
-    Medium: string;
-    Large: string;
+  Button: {
+    Background: {
+      Color: {
+        Primary: {
+          Active: string;
+          Default: string;
+          Disabled: string;
+          Focus: string;
+          Hover: string;
+        };
+        Secondary: {
+          Active: string;
+          Default: string;
+          "Default Opaque": string;
+          Disabled: string;
+          Focus: string;
+          Hover: string;
+        };
+      };
+    };
+    Border: {
+      Color: {
+        Secondary: {
+          Default: string;
+          Disabled: string;
+        };
+      };
+    };
+    Text: {
+      Color: {
+        Primary: {
+          Default: string;
+          Disabled: string;
+        };
+        Secondary: {
+          Default: string;
+          Disabled: string;
+        };
+      };
+    };
   };
   Link: {
     Text: {
@@ -204,66 +245,25 @@ export type DesignToken = {
     };
     Underline: {
       Color: {
-        Tertiary: {
-          Default: string;
-          Active: string;
-        };
         Primary: {
-          Default: string;
           Active: string;
+          Default: string;
         };
         Secondary: {
-          Hover: string;
           Active: string;
           Focus: string;
+          Hover: string;
+        };
+        Tertiary: {
+          Active: string;
+          Default: string;
         };
       };
+      Offset: string;
       Width: {
         Primary: string;
         Secondary: string;
         Tertiary: string;
-      };
-      Offset: string;
-    };
-  };
-  Button: {
-    Text: {
-      Color: {
-        Primary: {
-          Default: string;
-          Disabled: string;
-        };
-        Secondary: {
-          Default: string;
-          Disabled: string;
-        };
-      };
-    };
-    Background: {
-      Color: {
-        Primary: {
-          Default: string;
-          Hover: string;
-          Active: string;
-          Focus: string;
-          Disabled: string;
-        };
-        Secondary: {
-          Default: string;
-          "Default Opaque": string;
-          Hover: string;
-          Active: string;
-          Focus: string;
-          Disabled: string;
-        };
-      };
-    };
-    Border: {
-      Color: {
-        Secondary: {
-          Default: string;
-          Disabled: string;
-        };
       };
     };
   };

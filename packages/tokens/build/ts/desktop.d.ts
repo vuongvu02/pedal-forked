@@ -8,7 +8,7 @@ export type DesignToken = {
       Primary: string;
       Secondary: string;
     };
-    Size: {
+    "Line Height": {
       xs: string;
       s: string;
       m: string;
@@ -19,7 +19,7 @@ export type DesignToken = {
       "4xl": string;
       "5xl": string;
     };
-    "Line Height": {
+    Size: {
       xs: string;
       s: string;
       m: string;
