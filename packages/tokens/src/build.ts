@@ -5,12 +5,13 @@ import { Config } from 'style-dictionary';
 import { StyleDictionary } from 'style-dictionary-utils';
 import { TokenSourceWithMode } from './types.js';
 import { logSuccess } from './utils.js';
-
-const THEME_MODES = process.env.THEME_MODES?.split(',') || ['light', 'dark'];
-const RESPONSIVE_MODES = process.env.RESPONSIVE_MODES?.split(',') || ['mobile', 'desktop'];
-const MOBILE_BREAKPOINT = process.env.MOBILE_BREAKPOINT || '768px';
-const DEFAULT_MODES = process.env.DEFAULT_MODES?.split(',') || ['light', 'mobile'];
-const PRIMITIVE_SET_NAME = process.env.PRIMITIVE_SET_NAME || 'primitives';
+import {
+  THEME_MODES,
+  RESPONSIVE_MODES,
+  MOBILE_BREAKPOINT,
+  DEFAULT_MODES,
+  PRIMITIVE_SET_NAME,
+} from './constants.js';
 
 const inputTokenSets = glob.sync('tokens/**/*.json');
 

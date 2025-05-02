@@ -4,8 +4,7 @@ import { GetLocalVariablesResponse } from '@figma/rest-api-spec';
 import FigmaApi from './figma-api.js';
 import { Token, TokensFile } from './types.js';
 import { tokenTypeFromVariable, tokenValueFromVariable, logSuccess } from './utils.js';
-
-const OUTPUT_DIR = 'tokens';
+import { EXCEPTIONS, OUTPUT_DIR } from './constants.js';
 
 export function tokenFilesFromLocalVariables(localVariablesResponse: GetLocalVariablesResponse) {
   const tokenFiles: { [fileName: string]: TokensFile } = {};
@@ -29,17 +28,11 @@ export function tokenFilesFromLocalVariables(localVariablesResponse: GetLocalVar
 
       let tokenObj: any = tokenFiles[fileName];
 
-      const exceptions: Record<string, string[]> = {
-        Light: ['Sizing', 'Spacing', 'Radius'],
-        Dark: ['Sizing', 'Spacing', 'Radius'],
-      };
-
-      // Some variables are not included in the collection but somehow appear in the response, those variables are exceptions
-      const shouldSkipByException = (exceptions[mode.name] || []).some((exception) =>
+      const shouldBeExcluded = (EXCEPTIONS[mode.name] || []).some((exception) =>
         variable.name.startsWith(exception),
       );
 
-      if (shouldSkipByException) {
+      if (shouldBeExcluded) {
         return;
       }
 

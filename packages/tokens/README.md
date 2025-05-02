@@ -153,11 +153,6 @@ For Figma integration, you'll need to create a `.env` file with the following va
 ```
 FILE_KEY="your_figma_file_key"
 PERSONAL_ACCESS_TOKEN="your_figma_personal_access_token"
-THEME_MODES=light,dark
-RESPONSIVE_MODES=mobile,desktop
-MOBILE_BREAKPOINT=768px
-DEFAULT_MODES=light,mobile
-PRIMITIVE_SET_NAME=primitives
 ```
 
 ## Token Format
