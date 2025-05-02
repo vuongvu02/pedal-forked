@@ -37,21 +37,6 @@
   --color-hint-success-background: var(--color-green-200);
   --color-hint-success-border: var(--color-green-800);
   --focus-color: var(--color-base-white);
-  --sizing-1: var(--size-1);
-  --sizing-2: var(--size-2);
-  --sizing-4: var(--size-4);
-  --sizing-24: var(--size-24);
-  --sizing-32: var(--size-32);
-  --sizing-40: var(--size-40);
-  --sizing-48: var(--size-48);
-  --sizing-64: var(--size-64);
-  --spacing-0: var(--size-0);
-  --spacing-2: var(--size-2);
-  --spacing-8: var(--size-8);
-  --spacing-16: var(--size-16);
-  --spacing-24: var(--size-24);
-  --spacing-40: var(--size-40);
-  --radius-medium: var(--size-8);
-  --focus-thickness: var(--sizing-2);
-  --focus-offset: var(--sizing-4);
+  --focus-thickness: var(--size-2);
+  --focus-offset: var(--size-4);
 }

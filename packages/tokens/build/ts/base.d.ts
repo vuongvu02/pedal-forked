@@ -139,6 +139,28 @@ export type DesignToken = {
     Thickness: string;
     Offset: string;
   };
+  "Icon Size": string;
+  "Text Input Vertical Padding": string;
+  Size: {
+    "0": string;
+    "1": string;
+    "2": string;
+    "4": string;
+    "8": string;
+    "12": string;
+    "16": string;
+    "20": string;
+    "24": string;
+    "32": string;
+    "40": string;
+    "48": string;
+    "64": string;
+    "80": string;
+    "96": string;
+    "112": string;
+    "128": string;
+    "160": string;
+  };
   Sizing: {
     "1": string;
     "2": string;
@@ -167,32 +189,10 @@ export type DesignToken = {
     "160": string;
   };
   Radius: {
-    Medium: string;
     None: string;
     Small: string;
+    Medium: string;
     Large: string;
-  };
-  "Icon Size": string;
-  "Text Input Vertical Padding": string;
-  Size: {
-    "0": string;
-    "1": string;
-    "2": string;
-    "4": string;
-    "8": string;
-    "12": string;
-    "16": string;
-    "20": string;
-    "24": string;
-    "32": string;
-    "40": string;
-    "48": string;
-    "64": string;
-    "80": string;
-    "96": string;
-    "112": string;
-    "128": string;
-    "160": string;
   };
   Link: {
     Text: {

@@ -29,6 +29,20 @@ export function tokenFilesFromLocalVariables(localVariablesResponse: GetLocalVar
 
       let tokenObj: any = tokenFiles[fileName];
 
+      const exceptions: Record<string, string[]> = {
+        Light: ['Sizing', 'Spacing', 'Radius'],
+        Dark: ['Sizing', 'Spacing', 'Radius'],
+      };
+
+      // Some variables are not included in the collection but somehow appear in the response, those variables are exceptions
+      const shouldSkipByException = (exceptions[mode.name] || []).some((exception) =>
+        variable.name.startsWith(exception),
+      );
+
+      if (shouldSkipByException) {
+        return;
+      }
+
       variable.name.split('/').forEach((groupName) => {
         tokenObj[groupName] = tokenObj[groupName] || {};
         tokenObj = tokenObj[groupName];

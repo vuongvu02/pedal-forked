@@ -61,25 +61,4 @@ export type DesignToken = {
     Thickness: string;
     Offset: string;
   };
-  Sizing: {
-    "1": string;
-    "2": string;
-    "4": string;
-    "24": string;
-    "32": string;
-    "40": string;
-    "48": string;
-    "64": string;
-  };
-  Spacing: {
-    "0": string;
-    "2": string;
-    "8": string;
-    "16": string;
-    "24": string;
-    "40": string;
-  };
-  Radius: {
-    Medium: string;
-  };
 };

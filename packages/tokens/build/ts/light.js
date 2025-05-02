@@ -61,25 +61,4 @@ export default {
     Thickness: "0.125rem",
     Offset: "0.25rem",
   },
-  Sizing: {
-    "1": "0.0625rem",
-    "2": "0.125rem",
-    "4": "0.25rem",
-    "24": "1.5rem",
-    "32": "2rem",
-    "40": "2.5rem",
-    "48": "3rem",
-    "64": "4rem",
-  },
-  Spacing: {
-    "0": "0",
-    "2": "0.125rem",
-    "8": "0.5rem",
-    "16": "1rem",
-    "24": "1.5rem",
-    "40": "2.5rem",
-  },
-  Radius: {
-    Medium: "0.5rem",
-  },
 };
