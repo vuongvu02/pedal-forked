@@ -16,7 +16,7 @@
     "prettier": "^3.5.3",
     "turbo": "^2.5.0"
   },
-  "packageManager": "pnpm@10.4.1",
+  "packageManager": "pnpm@10.10.0",
   "name": "pedal-ui",
   "pnpm": {
     "onlyBuiltDependencies": [

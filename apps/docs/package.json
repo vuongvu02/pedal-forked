@@ -31,6 +31,7 @@
     "@vitejs/plugin-react": "^4.4.1",
     "eslint": "^9.25.1",
     "gh-pages": "^6.3.0",
+    "marked": "^15.0.11",
     "serve": "^14.2.4",
     "storybook": "^8.6.12",
     "storybook-addon-code-editor": "^4.1.1",
