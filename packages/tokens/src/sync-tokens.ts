@@ -9,7 +9,7 @@ import {
   logSuccess,
   sortObjectDeep,
 } from './utils.js';
-import { EXCEPTIONS, OUTPUT_DIR } from './constants.js';
+import { EXCEPTION_LIST, OUTPUT_DIR } from './constants.js';
 
 export function tokenFilesFromLocalVariables(localVariablesResponse: GetLocalVariablesResponse) {
   const tokenFiles: { [fileName: string]: TokensFile } = {};
@@ -33,11 +33,11 @@ export function tokenFilesFromLocalVariables(localVariablesResponse: GetLocalVar
 
       let tokenObj: any = tokenFiles[fileName];
 
-      const shouldBeExcluded = (EXCEPTIONS[mode.name] || []).some((exception) =>
+      const shouldBeSkipped = (EXCEPTION_LIST[mode.name] || []).some((exception) =>
         variable.name.startsWith(exception),
       );
 
-      if (shouldBeExcluded) {
+      if (shouldBeSkipped) {
         return;
       }
 
