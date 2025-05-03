@@ -1,19 +1,8 @@
 import { Meta } from "@storybook/blocks";
 import { useState, useEffect } from "react";
-import TokenReadmeContent from "../../../../packages/tokens/README.md?raw";
+import { Markdown } from "@storybook/blocks";
+import README from "../../../../packages/tokens/README.md?raw";
 
 <Meta title="Design Tokens/README" />
 
-export const MarkdownRenderer = () => {
-  const [htmlContent, setHtmlContent] = useState("");
-
-useEffect(() => {
-import('marked').then(({ marked }) => {
-setHtmlContent(marked.parse(TokenReadmeContent));
-});
-}, []);
-
-return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
-};
-
-<MarkdownRenderer />
+<Markdown>{README}</Markdown>
