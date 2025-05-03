@@ -4,7 +4,7 @@ import 'dotenv/config';
 import { Config } from 'style-dictionary';
 import { StyleDictionary } from 'style-dictionary-utils';
 import { TokenSourceWithMode } from './types.js';
-import { logSuccess } from './utils.js';
+import { logSuccess, getModeFromFilePath } from './utils.js';
 import {
   THEME_MODES,
   RESPONSIVE_MODES,
@@ -15,11 +15,12 @@ import {
 
 const inputTokenSets = glob.sync('tokens/**/*.json');
 
-const getModeFromFilePath = (path: string): string => {
-  const modeMatch = path.match(/tokens\/[^.]+\.([^.]+)\.json/) || [];
-  return modeMatch[1].toLowerCase();
-};
-
+/**
+ * Filters and returns a subset of token sets as the base token set.
+ *
+ * This function filters out tokens that are specific to non-default theme or responsive modes.
+ * It only includes tokens that are either in default modes or not associated with any specific mode.
+ */
 const getBaseTokenSet = (): TokenSourceWithMode => {
   const tokenSource = inputTokenSets.filter((tokenPath) => {
     const fileMode = getModeFromFilePath(tokenPath);
@@ -33,6 +34,13 @@ const getBaseTokenSet = (): TokenSourceWithMode => {
   return { tokenSource };
 };
 
+/**
+ * Generates an array of token sources associated with specific modes.
+ *
+ * to include token sources that either:
+ * - Match the specific mode being processed
+ * - Are part of the primitive set (identified by the PRIMITIVE_SET_NAME constant)
+ */
 const getTokenSets = (modes: string[]): TokenSourceWithMode[] => {
   return modes.map((currentMode) => {
     const tokenSource = inputTokenSets.filter((tokenPath) => {
@@ -46,22 +54,27 @@ const getTokenSets = (modes: string[]): TokenSourceWithMode[] => {
   });
 };
 
-const getCSSThemeSelector = (mode: string) => {
-  if (THEME_MODES.includes(mode) && !DEFAULT_MODES.includes(mode)) {
-    return `[data-theme="${mode}"]`;
-  }
-  return ':root';
-};
+/**
+ * Generates a CSS import file that references all the CSS output files.
+ *
+ * This function creates a single CSS file that imports all the individual theme and responsive
+ * CSS files via @import statements. This allows consumers to include just one file
+ * and get all the token variables.
+ */
+const generateCSSImportFile = (outputCSSRefs: string[]) => {
+  const cssFilePath = 'build/css/variables.css';
 
-const getCSSRules = (mode: string) => {
-  if (RESPONSIVE_MODES.includes(mode) && !DEFAULT_MODES.includes(mode)) {
-    return [
-      {
-        atRule: `@media screen and (min-width: ${MOBILE_BREAKPOINT})`,
-      },
-    ];
-  }
-  return undefined;
+  const cssImports = outputCSSRefs
+    .filter(Boolean)
+    .map((ref) => `@import url('./${ref}');`)
+    .join('\n');
+
+  fs.writeFileSync(
+    cssFilePath,
+    `/**\n* Do not edit directly, this file was auto-generated.\n*/\n\n${cssImports}\n`,
+  );
+
+  logSuccess(`Generated CSS import file: ${cssFilePath}`);
 };
 
 const getConfigs = (): Config[] => {
@@ -86,8 +99,14 @@ const getConfigs = (): Config[] => {
               filter: 'ignore-primitives-in-mode',
               options: {
                 outputReferences: true,
-                selector: getCSSThemeSelector(mode),
-                rules: getCSSRules(mode),
+                selector:
+                  THEME_MODES.includes(mode) && !DEFAULT_MODES.includes(mode)
+                    ? `[data-theme="${mode}"]`
+                    : ':root',
+                rules:
+                  RESPONSIVE_MODES.includes(mode) && !DEFAULT_MODES.includes(mode)
+                    ? [{ atRule: `@media screen and (min-width: ${MOBILE_BREAKPOINT})` }]
+                    : undefined,
               },
             },
           ],
@@ -129,22 +148,6 @@ const getConfigs = (): Config[] => {
       },
     }),
   );
-};
-
-const generateCSSImportFile = (outputCSSRefs: string[]) => {
-  const cssFilePath = 'build/css/variables.css';
-
-  const cssImports = outputCSSRefs
-    .filter(Boolean)
-    .map((ref) => `@import url('./${ref}');`)
-    .join('\n');
-
-  fs.writeFileSync(
-    cssFilePath,
-    `/**\n* Do not edit directly, this file was auto-generated.\n*/\n\n${cssImports}\n`,
-  );
-
-  logSuccess(`Generated CSS import file: ${cssFilePath}`);
 };
 
 async function run() {

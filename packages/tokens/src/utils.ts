@@ -138,3 +138,8 @@ export function sortObjectDeep<T extends Record<string, any>>(obj: T): T {
       return acc;
     }, {} as T);
 }
+
+export const getModeFromFilePath = (path: string): string => {
+  const modeMatch = path.match(/tokens\/[^.]+\.([^.]+)\.json/) || [];
+  return modeMatch[1].toLowerCase();
+};
