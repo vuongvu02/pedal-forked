@@ -78,15 +78,28 @@ The complete collection with default settings:
 
 #### Step 2: Configure access to GitHub Packages
 
-```bash
-# Configure .npmrc for GitHub Packages
-@bikeleasing-service:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
+Create a `.npmrc` file at the root of your project containing:
 
-# Or for Yarn v4, configure .yarnrc.yml
-npmRegistries:
-  "https://npm.pkg.github.com":
-    npmAuthToken: YOUR_GITHUB_TOKEN
+```bash
+# Configure access to GitHub Packages
+@bikeleasing-service:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GH_TOKEN}
+```
+
+Make sure to set the `GH_TOKEN` environment variable with your GitHub personal access token.
+
+#### Troubleshooting
+
+If you encounter installation issues with Yarn projects, you may need to specify both the default registry and the GitHub registry in your `.yarnrc.yml` file:
+
+```yaml
+npmRegistryServer: 'https://registry.yarnpkg.com'
+
+npmScopes:
+  bikeleasing-service:
+    npmRegistryServer: 'https://npm.pkg.github.com'
+    npmAlwaysAuth: true
+    npmAuthToken: '${GH_TOKEN}'
 ```
 
 #### Step 3: Install the package

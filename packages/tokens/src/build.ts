@@ -4,7 +4,7 @@ import 'dotenv/config';
 import { Config } from 'style-dictionary';
 import { StyleDictionary } from 'style-dictionary-utils';
 import { TokenSourceWithMode } from './types.js';
-import { logSuccess, getModeFromFilePath } from './utils.js';
+import { logSuccess, getModeFromFilePath, customTypescriptEsmDeclarations } from './utils';
 import {
   THEME_MODES,
   RESPONSIVE_MODES,
@@ -86,6 +86,9 @@ const getConfigs = (): Config[] => {
           'ignore-primitives-in-mode': (token) =>
             mode === 'base' || !String(token.filePath).toLowerCase().includes(PRIMITIVE_SET_NAME),
         },
+        formats: {
+          'typescript/custom-esm-declarations': customTypescriptEsmDeclarations,
+        },
       },
       platforms: {
         css: {
@@ -101,7 +104,7 @@ const getConfigs = (): Config[] => {
                 outputReferences: true,
                 selector:
                   THEME_MODES.includes(mode) && !DEFAULT_MODES.includes(mode)
-                    ? `[data-theme="${mode}"]`
+                    ? `[data-theme="${mode}"], body[theme="${mode}"], .theme-${mode}`
                     : ':root',
                 rules:
                   RESPONSIVE_MODES.includes(mode) && !DEFAULT_MODES.includes(mode)
@@ -140,7 +143,7 @@ const getConfigs = (): Config[] => {
             },
             {
               destination: `${mode}.d.ts`,
-              format: 'typescript/esm-declarations',
+              format: 'typescript/custom-esm-declarations',
               filter: 'ignore-primitives-in-mode',
             },
           ],

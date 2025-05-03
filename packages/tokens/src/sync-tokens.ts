@@ -3,12 +3,7 @@ import * as fs from 'fs';
 import { GetLocalVariablesResponse } from '@figma/rest-api-spec';
 import FigmaApi from './figma-api.js';
 import { Token, TokensFile } from './types.js';
-import {
-  tokenTypeFromVariable,
-  tokenValueFromVariable,
-  logSuccess,
-  sortObjectDeep,
-} from './utils.js';
+import { tokenTypeFromVariable, tokenValueFromVariable, logSuccess, sortObjectDeep } from './utils';
 import { EXCEPTION_LIST, OUTPUT_DIR } from './constants.js';
 
 export function tokenFilesFromLocalVariables(localVariablesResponse: GetLocalVariablesResponse) {

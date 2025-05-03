@@ -2,7 +2,7 @@
  * Do not edit directly, this file was auto-generated.
  */
 
-export type DesignToken = {
+declare const _default: {
   Font: {
     Family: {
       Primary: string;
@@ -40,3 +40,5 @@ export type DesignToken = {
   "Icon Size": string;
   "Text Input Vertical Padding": string;
 };
+
+export default _default;

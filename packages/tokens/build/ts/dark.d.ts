@@ -2,7 +2,7 @@
  * Do not edit directly, this file was auto-generated.
  */
 
-export type DesignToken = {
+declare const _default: {
   Color: {
     Background: string;
     "Background Alternative 1": string;
@@ -62,3 +62,5 @@ export type DesignToken = {
     Thickness: string;
   };
 };
+
+export default _default;
