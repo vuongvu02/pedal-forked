@@ -7,7 +7,7 @@ describe('logSuccess', () => {
     const testMessage = 'Test success message';
 
     logSuccess(testMessage);
-    expect(consoleSpy).toHaveBeenCalledWith(`\n\x1b[32m✅ ${testMessage}\x1b[0m`);
+    expect(consoleSpy).toHaveBeenCalledWith(`\n\x1b[32m✅ ${testMessage}\x1b[0m\n`);
 
     consoleSpy.mockRestore();
   });

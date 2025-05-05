@@ -81,7 +81,7 @@ async function main() {
     console.info(`✔︎ Wrote "${fileName}"`);
   });
 
-  logSuccess(`Tokens files have been written to the ${OUTPUT_DIR} directory`);
+  logSuccess(`Tokens files have been written to the "${OUTPUT_DIR}" directory`);
 }
 
 main();

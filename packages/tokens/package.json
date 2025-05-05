@@ -1,6 +1,6 @@
 {
   "name": "@bikeleasing-service/pedal-tokens",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pedal Design Tokens",
   "license": "MIT",
   "type": "module",
@@ -19,7 +19,8 @@
     "prettier:check": "prettier --check src/",
     "prettier:fix": "prettier --write src/",
     "sync-tokens": "tsx src/sync-tokens.ts",
-    "test": "vitest run"
+    "test": "vitest run",
+    "release": "pnpm publish --access restricted --no-git-checks"
   },
   "devDependencies": {
     "@bikeleasing-service/typescript-config": "workspace:*",

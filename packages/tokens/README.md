@@ -79,10 +79,10 @@ Create a `.npmrc` file at the root of your project containing:
 ```bash
 # Configure access to GitHub Packages
 @bikeleasing-service:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${GH_TOKEN}
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
 ```
 
-Make sure to set the `GH_TOKEN` environment variable with your GitHub personal access token.
+Make sure to set the `GITHUB_TOKEN` environment variable with your GitHub personal access token.
 
 #### Troubleshooting
 
@@ -95,7 +95,7 @@ npmScopes:
   bikeleasing-service:
     npmRegistryServer: 'https://npm.pkg.github.com'
     npmAlwaysAuth: true
-    npmAuthToken: '${GH_TOKEN}'
+    npmAuthToken: '${GITHUB_TOKEN}'
 ```
 
 #### Step 3: Install the package
