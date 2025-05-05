@@ -5,9 +5,10 @@ import mobileTokens from "@bikeleasing-service/pedal-tokens/build/ts/mobile";
 import desktopTokens from "@bikeleasing-service/pedal-tokens/build/ts/desktop";
 import lightTokens from "@bikeleasing-service/pedal-tokens/build/ts/light";
 import darkTokens from "@bikeleasing-service/pedal-tokens/build/ts/dark";
+import "./tokens.styles.css";
 
 type TokensDisplayProps = {
-  tokens: typeof baseTokens;
+  tokens: Record<string, any>;
   groupName: string;
 };
 
@@ -27,63 +28,21 @@ const TokensDisplay: React.FC<TokensDisplayProps> = ({ tokens, groupName }) => {
           value.startsWith("hsl"));
 
       return (
-        <div
-          key={path.join(".")}
-          style={{
-            padding: "1rem",
-            border: "1px solid #eee",
-            borderRadius: "6px",
-            boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: "1rem",
-            marginBottom: "0.5rem",
-          }}
-        >
-          <div
-            style={{
-              fontWeight: "500",
-              color: "#333",
-              flexBasis: "40%",
-            }}
-          >
-            {tokenName}
+        <div key={path.join(".")} className="token-item">
+          <div className="token-name">
+            <div>{tokenName}</div>
+            <div className="token-path">{path.join(".")}</div>
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "1rem",
-              flexBasis: "60%",
-              justifyContent: "flex-end",
-            }}
-          >
+          <div className="token-value-container">
             {isColor && (
               <div
-                style={{
-                  width: "32px",
-                  height: "32px",
-                  backgroundColor: value as string,
-                  borderRadius: "4px",
-                  border: "1px solid rgba(0,0,0,0.1)",
-                  flexShrink: 0,
-                }}
+                className="token-color-preview"
+                style={{ backgroundColor: value as string }}
               />
             )}
 
-            <div
-              style={{
-                fontSize: "0.9rem",
-                fontFamily: "monospace",
-                color: "#666",
-                fontWeight: "400",
-              }}
-            >
-              {String(value)}
-            </div>
+            <div className="token-value">{String(value)}</div>
           </div>
         </div>
       );
@@ -91,22 +50,12 @@ const TokensDisplay: React.FC<TokensDisplayProps> = ({ tokens, groupName }) => {
 
     // For object nodes, render a section with nested tokens
     return (
-      <div key={path.join(".")} style={{ marginBottom: "2rem" }}>
+      <div key={path.join(".")} className="tokens-section">
         {path.length > 0 && (
-          <h3
-            style={{
-              borderBottom: "1px solid #eee",
-              paddingBottom: "0.5rem",
-              marginBottom: "1rem",
-              fontSize: "1.2rem",
-              color: "#333",
-            }}
-          >
-            {path[path.length - 1]}
-          </h3>
+          <h3 className="tokens-section-heading">{path[path.length - 1]}</h3>
         )}
 
-        <div style={{ paddingLeft: path.length > 0 ? "1rem" : 0 }}>
+        <div className="tokens-section-content">
           {Object.entries(tokenObj).map(([key, value]) =>
             renderTokens(value, [...path, key])
           )}
@@ -116,16 +65,8 @@ const TokensDisplay: React.FC<TokensDisplayProps> = ({ tokens, groupName }) => {
   };
 
   return (
-    <div
-      style={{
-        fontFamily: "system-ui, sans-serif",
-        padding: "50px 100px",
-        maxWidth: "1000px",
-        margin: "100px auto",
-        border: "1px solid #eee",
-      }}
-    >
-      <h1 style={{ marginBottom: "2rem" }}>{groupName}</h1>
+    <div className="tokens-display-container">
+      <h1 className="tokens-heading">{groupName}</h1>
 
       {renderTokens(tokens)}
     </div>

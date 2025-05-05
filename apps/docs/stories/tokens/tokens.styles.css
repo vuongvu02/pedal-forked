@@ -1,0 +1,81 @@
+@import url("@bikeleasing-service/pedal-tokens/build/css/variables.css");
+
+.tokens-display-container {
+  font-family:
+    var(--font-family-primary), var(--font-family-secondary), sans-serif;
+  padding: 48px 64px;
+  max-width: 1000px;
+  margin: var(--spacing-64) auto;
+  border: var(--sizing-1) solid var(--color-divider);
+}
+
+.tokens-heading {
+  margin-bottom: var(--spacing-32);
+}
+
+.tokens-section {
+  margin-bottom: var(--spacing-32);
+}
+
+.tokens-section-heading {
+  border-bottom: var(--sizing-1) solid var(--color-divider);
+  padding-bottom: var(--spacing-8);
+  margin-bottom: var(--spacing-16);
+  font-size: var(--font-size-l);
+  color: var(--color-neutral-800);
+}
+
+.tokens-section-content {
+  padding-left: var(--spacing-16);
+}
+
+.token-item {
+  padding: var(--spacing-16);
+  border: var(--sizing-1) solid var(--color-divider);
+  border-radius: var(--radius-small);
+  box-shadow: 0 var(--sizing-1) var(--spacing-4) rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-16);
+  margin-bottom: var(--spacing-8);
+}
+
+.token-name {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-neutral-800);
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.token-path {
+  font-size: var(--font-size-xs);
+  font-style: italic;
+  color: var(--color-neutral-600);
+  margin-top: var(--spacing-4);
+}
+
+.token-value-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-16);
+  flex-basis: 60%;
+  justify-content: flex-end;
+}
+
+.token-color-preview {
+  width: var(--size-32);
+  height: var(--size-32);
+  border-radius: var(--radius-small);
+  border: var(--sizing-1) solid rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.token-value {
+  font-size: var(--font-size-s);
+  font-family: monospace;
+  color: var(--color-neutral-600);
+  font-weight: var(--font-weight-normal);
+}

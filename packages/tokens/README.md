@@ -44,12 +44,10 @@ The complete collection with default settings:
 **Light Theme**
 
 - Theme tokens (light)
-- Primitives tokens
 
 **Dark Theme**
 
 - Theme tokens (dark)
-- Primitives tokens
 
 ### Responsive Variants
 
@@ -57,13 +55,11 @@ The complete collection with default settings:
 
 - Responsive tokens (mobile)
 - Typography tokens (mobile)
-- Primitives tokens
 
 **Desktop**
 
 - Responsive tokens (desktop)
 - Typography tokens (desktop)
-- Primitives tokens
 
 ## Usage
 
