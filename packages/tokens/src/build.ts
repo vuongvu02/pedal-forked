@@ -11,17 +11,18 @@ import {
   MOBILE_BREAKPOINT,
   DEFAULT_MODES,
   PRIMITIVE_SET_NAME,
+  DEFAULT_SET_NAME,
 } from './constants.js';
 
 const inputTokenSets = glob.sync('tokens/**/*.json');
 
 /**
- * Filters and returns a subset of token sets as the base token set.
+ * Filters and returns a subset of token sets as the default token set.
  *
- * This function filters out tokens that are specific to non-default theme or responsive modes.
+ * This function filters out tokens that are specific to non-default modes.
  * It only includes tokens that are either in default modes or not associated with any specific mode.
  */
-const getBaseTokenSet = (): TokenSourceWithMode => {
+const getDefaultTokenSet = (): TokenSourceWithMode => {
   const tokenSource = inputTokenSets.filter((tokenPath) => {
     const fileMode = getModeFromFilePath(tokenPath);
     const allModes = [...THEME_MODES, ...RESPONSIVE_MODES];
@@ -39,19 +40,22 @@ const getBaseTokenSet = (): TokenSourceWithMode => {
  *
  * to include token sources that either:
  * - Match the specific mode being processed
+ * - Are not in the default set
  * - Are part of the primitive set (identified by the PRIMITIVE_SET_NAME constant)
  */
 const getTokenSets = (modes: string[]): TokenSourceWithMode[] => {
-  return modes.map((currentMode) => {
-    const tokenSource = inputTokenSets.filter((tokenPath) => {
-      if (tokenPath.toLowerCase().includes(PRIMITIVE_SET_NAME)) {
-        return true;
-      }
-      return getModeFromFilePath(tokenPath) === currentMode;
-    });
+  return modes
+    .filter((mode) => !DEFAULT_MODES.includes(mode))
+    .map((mode) => {
+      const tokenSource = inputTokenSets.filter((tokenPath) => {
+        if (tokenPath.toLowerCase().includes(PRIMITIVE_SET_NAME)) {
+          return true;
+        }
+        return getModeFromFilePath(tokenPath) === mode;
+      });
 
-    return { mode: currentMode, tokenSource };
-  });
+      return { mode, tokenSource };
+    });
 };
 
 /**
@@ -78,79 +82,82 @@ const generateCSSImportFile = (outputCSSRefs: string[]) => {
 };
 
 const getConfigs = (): Config[] => {
-  return [getBaseTokenSet(), ...getTokenSets(THEME_MODES), ...getTokenSets(RESPONSIVE_MODES)].map(
-    ({ mode = 'base', tokenSource }) => ({
-      source: tokenSource,
-      hooks: {
-        filters: {
-          'ignore-primitives-in-mode': (token) =>
-            mode === 'base' || !String(token.filePath).toLowerCase().includes(PRIMITIVE_SET_NAME),
-        },
-        formats: {
-          'typescript/custom-esm-declarations': customTypescriptEsmDeclarations,
-        },
+  return [
+    getDefaultTokenSet(),
+    ...getTokenSets(THEME_MODES),
+    ...getTokenSets(RESPONSIVE_MODES),
+  ].map(({ mode = DEFAULT_SET_NAME, tokenSource }) => ({
+    source: tokenSource,
+    hooks: {
+      filters: {
+        'ignore-primitives-in-mode': (token) =>
+          mode === DEFAULT_SET_NAME ||
+          !String(token.filePath).toLowerCase().includes(PRIMITIVE_SET_NAME),
       },
-      platforms: {
-        css: {
-          transformGroup: 'css',
-          transforms: ['size/pxToRem'],
-          buildPath: 'build/css/',
-          files: [
-            {
-              destination: `${mode}.css`,
-              format: 'css/advanced',
-              filter: 'ignore-primitives-in-mode',
-              options: {
-                outputReferences: true,
-                selector:
-                  THEME_MODES.includes(mode) && !DEFAULT_MODES.includes(mode)
-                    ? `[data-theme="${mode}"], body[theme="${mode}"], .theme-${mode}`
-                    : ':root',
-                rules:
-                  RESPONSIVE_MODES.includes(mode) && !DEFAULT_MODES.includes(mode)
-                    ? [{ atRule: `@media screen and (min-width: ${MOBILE_BREAKPOINT})` }]
-                    : undefined,
-              },
-            },
-          ],
-        },
-        scss: {
-          transformGroup: 'scss',
-          transforms: ['size/pxToRem'],
-          basePxFontSize: 16,
-          buildPath: 'build/scss/',
-          files: [
-            {
-              destination: `${mode}.scss`,
-              format: 'scss/variables',
-              filter: 'ignore-primitives-in-mode',
-              options: {
-                outputReferences: true,
-              },
-            },
-          ],
-        },
-        ts: {
-          transformGroup: 'js',
-          transforms: ['name/camel', 'size/pxToRem'],
-          basePxFontSize: 16,
-          buildPath: 'build/ts/',
-          files: [
-            {
-              destination: `${mode}.js`,
-              format: 'javascript/esm',
-              filter: 'ignore-primitives-in-mode',
-            },
-            {
-              destination: `${mode}.d.ts`,
-              format: 'typescript/custom-esm-declarations',
-              filter: 'ignore-primitives-in-mode',
-            },
-          ],
-        },
+      formats: {
+        'typescript/custom-esm-declarations': customTypescriptEsmDeclarations,
       },
-    }),
-  );
+    },
+    platforms: {
+      css: {
+        transformGroup: 'css',
+        transforms: ['size/pxToRem'],
+        buildPath: 'build/css/',
+        files: [
+          {
+            destination: `${mode}.css`,
+            format: 'css/advanced',
+            filter: 'ignore-primitives-in-mode',
+            options: {
+              outputReferences: true,
+              selector:
+                THEME_MODES.includes(mode) && !DEFAULT_MODES.includes(mode)
+                  ? `[data-theme="${mode}"], body[theme="${mode}"], .theme-${mode}`
+                  : ':root',
+              rules:
+                RESPONSIVE_MODES.includes(mode) && !DEFAULT_MODES.includes(mode)
+                  ? [{ atRule: `@media screen and (min-width: ${MOBILE_BREAKPOINT})` }]
+                  : undefined,
+            },
+          },
+        ],
+      },
+      scss: {
+        transformGroup: 'scss',
+        transforms: ['size/pxToRem'],
+        basePxFontSize: 16,
+        buildPath: 'build/scss/',
+        files: [
+          {
+            destination: `${mode}.scss`,
+            format: 'scss/variables',
+            filter: 'ignore-primitives-in-mode',
+            options: {
+              outputReferences: true,
+            },
+          },
+        ],
+      },
+      ts: {
+        transformGroup: 'js',
+        transforms: ['name/camel', 'size/pxToRem'],
+        basePxFontSize: 16,
+        buildPath: 'build/ts/',
+        files: [
+          {
+            destination: `${mode}.js`,
+            format: 'javascript/esm',
+            filter: 'ignore-primitives-in-mode',
+          },
+          {
+            destination: `${mode}.d.ts`,
+            format: 'typescript/custom-esm-declarations',
+            filter: 'ignore-primitives-in-mode',
+          },
+        ],
+      },
+    },
+  }));
 };
 
 async function run() {

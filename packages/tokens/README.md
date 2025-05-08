@@ -11,9 +11,9 @@ The token system provides a single source of truth for design values that can be
 - Transformed into various formats (CSS, SCSS, TypeScript)
 - Used consistently across all platforms and components
 
-## Token Categories
+## Token Collections
 
-Our design tokens are organized into the following categories:
+Our design tokens are organized into the following collections:
 
 - **Primitives**: Base values like colors, opacities, and other raw values
 - **Theme Tokens**: Light and dark theme-specific values
@@ -24,13 +24,13 @@ Our design tokens are organized into the following categories:
 
 For a detailed explanation of our token architecture and usage guidelines, please refer to our [Design Tokens Concept documentation](https://www.notion.so/bikeleasing/Design-Tokens-Concept-b5caf3730f9d4cf6a1da3a3157852918).
 
-## Token Structure
+## Token Build Structure
 
-Our token system is organized hierarchically and transformed for different platforms and themes:
+All tokens are organized into different sets to allow flexibility in usage:
 
-### Base
+### Default Set
 
-The complete collection with default settings:
+The complete collection with default settings including:
 
 - Component tokens
 - Theme tokens (light)
@@ -39,24 +39,11 @@ The complete collection with default settings:
 - Typography tokens (mobile)
 - Primitives tokens
 
-### Theme Variants
-
-**Light Theme**
-
-- Theme tokens (light)
-
-**Dark Theme**
+### Dark theme set
 
 - Theme tokens (dark)
 
-### Responsive Variants
-
-**Mobile**
-
-- Responsive tokens (mobile)
-- Typography tokens (mobile)
-
-**Desktop**
+### Desktop token set
 
 - Responsive tokens (desktop)
 - Typography tokens (desktop)
@@ -180,7 +167,7 @@ This package is published to GitHub Packages under the `@bikeleasing-service` sc
 
 ```bash
 # Ensure you're authenticated with GitHub Packages
-pnpm publish --access restricted
+pnpm release
 ```
 
 ## License

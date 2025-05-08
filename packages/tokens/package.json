@@ -4,9 +4,9 @@
   "description": "Pedal Design Tokens",
   "license": "MIT",
   "type": "module",
-  "main": "./build/ts/base.js",
-  "module": "./build/ts/base.js",
-  "types": "./build/ts/base.d.ts",
+  "main": "./build/ts/default.js",
+  "module": "./build/ts/default.js",
+  "types": "./build/ts/default.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },

@@ -2,8 +2,6 @@
 * Do not edit directly, this file was auto-generated.
 */
 
-@import url('./base.css');
-@import url('./light.css');
+@import url('./default.css');
 @import url('./dark.css');
-@import url('./mobile.css');
 @import url('./desktop.css');

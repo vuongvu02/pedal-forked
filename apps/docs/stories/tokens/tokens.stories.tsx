@@ -1,9 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import baseTokens from "@bikeleasing-service/pedal-tokens";
-import mobileTokens from "@bikeleasing-service/pedal-tokens/build/ts/mobile";
+import defaultTokens from "@bikeleasing-service/pedal-tokens";
 import desktopTokens from "@bikeleasing-service/pedal-tokens/build/ts/desktop";
-import lightTokens from "@bikeleasing-service/pedal-tokens/build/ts/light";
 import darkTokens from "@bikeleasing-service/pedal-tokens/build/ts/dark";
 import "./tokens.styles.css";
 
@@ -85,25 +83,15 @@ export default meta;
 
 type Story = StoryObj<typeof TokensDisplay>;
 
-export const BaseTokens: Story = {
-  render: () => <TokensDisplay tokens={baseTokens} groupName="Base Tokens" />,
-};
-
-export const LightTokens: Story = {
+export const DefaultTokens: Story = {
   render: () => (
-    <TokensDisplay tokens={lightTokens} groupName="Light Mode Tokens" />
+    <TokensDisplay tokens={defaultTokens} groupName="Default Tokens" />
   ),
 };
 
 export const DarkTokens: Story = {
   render: () => (
     <TokensDisplay tokens={darkTokens} groupName="Dark Mode Tokens" />
-  ),
-};
-
-export const MobileTokens: Story = {
-  render: () => (
-    <TokensDisplay tokens={mobileTokens} groupName="Mobile Tokens" />
   ),
 };
 
