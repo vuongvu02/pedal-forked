@@ -29,7 +29,9 @@ const TokensDisplay: React.FC<TokensDisplayProps> = ({ tokens, groupName }) => {
         <div key={path.join(".")} className="token-item">
           <div className="token-name">
             <div>{tokenName}</div>
-            <div className="token-path">{path.join(".")}</div>
+            <div className="token-path">
+              var(--{path.join("-").toLowerCase().replace(/\s+/g, "-")})
+            </div>
           </div>
 
           <div className="token-value-container">
@@ -65,7 +67,12 @@ const TokensDisplay: React.FC<TokensDisplayProps> = ({ tokens, groupName }) => {
   return (
     <div className="tokens-display-container">
       <h1 className="tokens-heading">{groupName}</h1>
-
+      <p className="tokens-description">
+        👉 Learn more about our{" "}
+        <a href="/?path=/docs/design-tokens-readme--docs#token-build-structure">
+          Token Build Structure
+        </a>
+      </p>
       {renderTokens(tokens)}
     </div>
   );
