@@ -103,6 +103,7 @@ const getConfigs = (): Config[] => {
         transformGroup: 'css',
         transforms: ['size/pxToRem'],
         buildPath: 'build/css/',
+        prefix: 'p',
         files: [
           {
             destination: `${mode}.css`,
@@ -112,7 +113,7 @@ const getConfigs = (): Config[] => {
               outputReferences: true,
               selector:
                 THEME_MODES.includes(mode) && !DEFAULT_MODES.includes(mode)
-                  ? `[data-theme="${mode}"], body[theme="${mode}"], .theme-${mode}`
+                  ? `[data-theme="${mode}"], body[theme="${mode}"], .theme-${mode}, .body--${mode}, .container--${mode}`
                   : ':root',
               rules:
                 RESPONSIVE_MODES.includes(mode) && !DEFAULT_MODES.includes(mode)

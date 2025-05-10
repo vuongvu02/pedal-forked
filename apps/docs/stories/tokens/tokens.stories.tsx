@@ -30,7 +30,7 @@ const TokensDisplay: React.FC<TokensDisplayProps> = ({ tokens, groupName }) => {
           <div className="token-name">
             <div>{tokenName}</div>
             <div className="token-path">
-              var(--{path.join("-").toLowerCase().replace(/\s+/g, "-")})
+              --p-{path.join("-").toLowerCase().replace(/\s+/g, "-")}
             </div>
           </div>
 
