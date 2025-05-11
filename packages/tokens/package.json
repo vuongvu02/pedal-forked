@@ -1,6 +1,6 @@
 {
   "name": "@bikeleasing-service/pedal-tokens",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Pedal Design Tokens",
   "license": "MIT",
   "type": "module",
