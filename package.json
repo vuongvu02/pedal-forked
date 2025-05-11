@@ -10,10 +10,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo run build --filter=docs^... && changeset publish",
-    "sync-tokens": "pnpm --filter=@bikeleasing-service/pedal-tokens run build",
-    "sync-tokens:clean": "pnpm --filter=@bikeleasing-service/pedal-tokens run clean",
-    "sync-tokens:figma": "pnpm --filter=@bikeleasing-service/pedal-tokens run sync-with-checks"
+    "release": "turbo run build --filter=docs^... && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.29.2",

@@ -19,8 +19,6 @@
     "prettier:check": "prettier --check src/",
     "prettier:fix": "prettier --write src/",
     "sync-tokens": "tsx src/sync-tokens.ts",
-    "validate-env": "tsx src/validate-env.ts",
-    "sync-with-checks": "pnpm validate-env",
     "test": "vitest run",
     "release": "pnpm publish --access restricted --no-git-checks"
   },
