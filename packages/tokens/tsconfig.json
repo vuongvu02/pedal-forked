@@ -1,4 +1,4 @@
 {
-  "extends": "@bikeleasing-service/typescript-config/base.json",
+  "extends": "../typescript-config/base.json",
   "exclude": ["node_modules"]
 }

@@ -108,9 +108,6 @@ importers:
 
   packages/tokens:
     devDependencies:
-      '@bikeleasing-service/typescript-config':
-        specifier: workspace:*
-        version: link:../typescript-config
       '@figma/rest-api-spec':
         specifier: ^0.28.0
         version: 0.28.0

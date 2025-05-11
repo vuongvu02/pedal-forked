@@ -23,7 +23,6 @@
     "release": "pnpm publish --access restricted --no-git-checks"
   },
   "devDependencies": {
-    "@bikeleasing-service/typescript-config": "workspace:*",
     "@figma/rest-api-spec": "^0.28.0",
     "@types/node": "^22.14.1",
     "@vitest/coverage-v8": "^1.6.0",
