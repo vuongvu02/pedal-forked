@@ -1,0 +1,68 @@
+name: Sync Figma variables to tokens
+on:
+  workflow_dispatch:
+  schedule:
+    # Run weekly on Monday at 1 AM
+    - cron: "0 1 * * 1"
+
+jobs:
+  sync-figma-to-tokens:
+    runs-on: ubuntu-latest
+    permissions:
+      # Need to be able to create new branches and commits
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "22.15.0"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Clone repo
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Clean token directory
+        run: cd ./packages/tokens && pnpm run clean
+
+      - name: Sync variables from Figma to tokens
+        id: sync-tokens
+        run: cd ./packages/tokens && pnpm run sync-with-checks
+        env:
+          FILE_KEY: ${{ secrets.FIGMA_FILE_KEY }}
+          PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_ACTION_VARIABLES_SYNC_FIGMA_TOKEN }}
+        continue-on-error: true
+
+      - name: Check for sync errors
+        if: steps.sync-tokens.outcome == 'failure'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            core.setFailed('Failed to sync tokens from Figma. Check Figma API access and file permissions and ensure environment variables are properly set.')
+
+      - name: Build token formats (CSS, SCSS, TypeScript)
+        if: steps.sync-tokens.outcome == 'success'
+        run: cd ./packages/tokens && pnpm run build
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: "Update tokens from Figma"
+          title: "Update tokens from Figma"
+          body: |
+            This PR updates design tokens from Figma.
+
+            ## Changes
+            - Synchronized latest variables from Figma design file
+            - Generated updated token formats (CSS, SCSS, TypeScript)
+
+            Please review the changes before merging.
+          branch: update-tokens
+          delete-branch: true

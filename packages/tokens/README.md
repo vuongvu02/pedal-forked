@@ -132,24 +132,97 @@ const fontSize = tokens.Font.Size.m; // "1rem"
 
 ### Building Tokens
 
+The token building process has three main steps:
+
+1. **Clean** - Remove previously generated token files
+2. **Sync** - Pull the latest variables from Figma
+3. **Build** - Generate tokens in CSS, SCSS, and TypeScript formats
+
 ```bash
-# Clean and build all tokens
+# Full build process (clean, sync, and build)
 pnpm build
 
-# Just sync tokens from source files
-pnpm sync-tokens
+# Individual steps (if you need more control)
+pnpm clean            # Remove all generated token files
+pnpm sync-tokens      # Only sync tokens from Figma
+pnpm run build        # Only build token formats from existing token files
 ```
 
 ### Figma Integration
 
 This package supports syncing with Figma variables, allowing you to pull the latest design tokens directly from your design source.
 
-For Figma integration, you'll need to create a `.env` file with the following variables:
+#### Configuration
+
+For Figma integration, you'll need to create a `.env` file in the tokens package directory with the following variables:
 
 ```
+# Figma file ID (found in the URL of your Figma file)
 FILE_KEY="your_figma_file_key"
+
+# Personal access token with Variables API access
 PERSONAL_ACCESS_TOKEN="your_figma_personal_access_token"
 ```
+
+#### Creating a Figma Personal Access Token
+
+1. Log in to Figma and go to your Account Settings
+2. Navigate to the "Personal access tokens" section
+3. Create a new token with a clear name (e.g., "Design Token Sync")
+4. Make sure the token has access to the Variables API
+5. Add this token to your `.env` file and/or repository secrets
+
+#### GitHub Actions Integration
+
+We have a GitHub workflow that automatically syncs tokens from Figma. It:
+
+1. Runs on a weekly schedule to keep tokens up-to-date
+2. Can be manually triggered from the Actions tab in GitHub
+3. Creates a pull request with the updated tokens
+
+The workflow uses repository secrets for authentication:
+
+- `FIGMA_FILE_KEY`: The ID of your Figma design file
+- `GH_ACTION_VARIABLES_SYNC_FIGMA_TOKEN`: Your Figma personal access token
+
+## Token Workflow
+
+### From Figma to Code
+
+The token synchronization process follows these steps:
+
+1. **Figma Design Work**:
+
+   - Designers create and update variables in Figma
+   - Variables are organized into collections and modes
+
+2. **Token Sync**:
+
+   - The `sync-tokens` script connects to Figma API using your personal access token
+   - It retrieves all local variables from the specified file
+   - Variables are converted to Design Tokens Format JSON files
+   - Token files are saved to the `tokens/` directory
+
+3. **Token Build**:
+
+   - The `build` script processes the JSON token files
+   - It generates theme variants (light/dark)
+   - It creates responsive variants (mobile/desktop)
+   - It builds tokens into CSS variables, SCSS variables, and TypeScript
+
+4. **Distribution**:
+   - Token files are published to GitHub Packages
+   - Components and applications import the tokens
+   - Design consistency is maintained across products
+
+### Automated Updates
+
+When the GitHub Action workflow runs:
+
+1. It syncs the latest variables from Figma
+2. It builds all token formats
+3. It creates a pull request with the changes
+4. After review and approval, the changes are merged
 
 ## Token Format
 

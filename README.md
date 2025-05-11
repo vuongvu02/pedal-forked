@@ -68,12 +68,35 @@ The `packages/tokens` package is the foundation of our design system, providing 
 - Built into multiple formats (CSS variables, SCSS, TypeScript)
 - Used by all UI components to ensure consistency
 
-To update design tokens from Figma:
+### Updating Design Tokens
+
+To update design tokens from Figma manually:
+
+```bash
+# From the project root
+pnpm sync-tokens        # Full process: clean, sync from Figma, and build
+pnpm sync-tokens:clean  # Just clean token files
+pnpm sync-tokens:figma  # Just sync from Figma
+```
+
+Or you can run commands directly in the tokens directory:
 
 ```bash
 cd packages/tokens
-pnpm sync-tokens
+pnpm build        # Full process: clean, sync from Figma, and build
+pnpm clean        # Clean token files
+pnpm sync-tokens  # Just sync from Figma
 ```
+
+### Automated Token Updates
+
+We have a GitHub Actions workflow that automatically syncs tokens from Figma:
+
+1. It runs weekly (every Monday at 1 AM) to keep tokens up-to-date
+2. Can be triggered manually from the Actions tab in GitHub
+3. Creates a pull request with the updated tokens for review
+
+For detailed information about the entire token workflow, see the [Tokens Workflow Guide](./packages/tokens/WORKFLOW.md).
 
 ## UI Components
 
