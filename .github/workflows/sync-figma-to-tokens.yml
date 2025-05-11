@@ -32,7 +32,7 @@ jobs:
       - name: Clean token directory
         run: cd ./packages/tokens && pnpm run clean
 
-      - name: Sync variables from Figma to tokens
+      - name: Sync variables from Figma to tokens & Build token formats (CSS, SCSS, TypeScript)
         id: sync-tokens
         run: cd ./packages/tokens && pnpm run build
         env:
@@ -46,10 +46,6 @@ jobs:
         with:
           script: |
             core.setFailed('Failed to sync tokens from Figma. Check Figma API access and file permissions and ensure environment variables are properly set.')
-
-      - name: Build token formats (CSS, SCSS, TypeScript)
-        if: steps.sync-tokens.outcome == 'success'
-        run: cd ./packages/tokens && pnpm run build
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
