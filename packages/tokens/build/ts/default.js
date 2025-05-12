@@ -42,7 +42,7 @@ export default {
     "Background Alternative 1": "#e2e2e2",
     "Background Alternative 2": "#eaf3d2",
     "Background Alternative 3": "#707070",
-    Brand: "#95c11e",
+    Brand: "#da0000",
     Divider: "#c6c6c6",
     Elevation: {
       "Background 1": "#ffffff",
@@ -199,9 +199,9 @@ export default {
       Color: {
         Primary: {
           Active: "#a8cb49",
-          Default: "#95c11e",
+          Default: "#da0000",
           Disabled: "#c6c6c6",
-          Focus: "#95c11e",
+          Focus: "#da0000",
           Hover: "#a8cb49",
         },
         Secondary: {
@@ -217,7 +217,7 @@ export default {
     Border: {
       Color: {
         Secondary: {
-          Default: "#95c11e",
+          Default: "#da0000",
           Disabled: "#c6c6c6",
         },
       },
